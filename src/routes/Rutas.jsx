@@ -1,13 +1,13 @@
 import React from "react";
 import { Route, Routes } from "react-router";
-import PaginaPrincipal from "../Pages/PaginaPrincipal/PaginaPrincipal";
+import PaginaPrincipal from "../pages/PaginaPrincipal/PaginaPrincipal";
 import ACercaDeNosotros from "../pages/a-cerca-de-nosotros/ACercaDeNosotros"
 import Contacto from "../pages/Contacto/Contacto"
-import Reservas from "../Pages/Reservas/Reservas"
+import Reservas from "../pages/Reservas/Reservas"
 import Galeria from "../components/galeria/Galeria";
 import InicioSesion from "../pages/Login/InicioSesion";
 import Registro from "../pages/Registro/Registro"
-import Error404 from "../Pages/Error404/Error404";
+import Error404 from "../pages/Error404/Error404";
 import Bandeja from "../components/bandeja/Bandeja";
 
 

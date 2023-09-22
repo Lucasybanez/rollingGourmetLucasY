@@ -6,16 +6,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import "./aCercaDeNosotros.css";
-import { useTranslation } from "react-i18next";
 
 const ACercaDeNosotros = () => {
-
-  const  { t } = useTranslation();
-
   return (
     <>
-      <h1 className="about-title mb-3">{t('nosotros')}</h1>
-      <p className="text-center px-5">{t('aboutDescripcion')}</p>
+      <h1>A Cerca De Nosotros</h1>
+      <p>Somos un grupo de programadores que...</p>
 
       <Container>
         <Row>
@@ -23,7 +19,12 @@ const ACercaDeNosotros = () => {
             <Card
               className="about-card shadow-lg"
             >
-              <Card.Body className="text-center">
+              <Image
+                className="about-img"
+                src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png"
+                roundedCircle
+              />
+              <Card.Body>
                 <Card.Title>Nombre</Card.Title>
                 <Card.Text>
                   Descripcion breve. Lorem ipsum dolor sit amet consectetur
@@ -49,7 +50,12 @@ const ACercaDeNosotros = () => {
               
               className="about-card shadow-lg"
             >
-              <Card.Body className="text-center">
+              <Image
+                className="about-img"
+                src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png"
+                roundedCircle
+              />
+              <Card.Body>
                 <Card.Title>Nombre</Card.Title>
                 <Card.Text>
                   Descripcion breve. Lorem ipsum dolor sit amet consectetur
@@ -75,7 +81,12 @@ const ACercaDeNosotros = () => {
              
               className="about-card shadow-lg"
             >
-              <Card.Body className="text-center">
+              <Image
+                className="about-img"
+                src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png"
+                roundedCircle
+              />
+              <Card.Body>
                 <Card.Title>Nombre</Card.Title>
                 <Card.Text>
                   Descripcion breve. Lorem ipsum dolor sit amet consectetur
@@ -96,12 +107,17 @@ const ACercaDeNosotros = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col className="about-col mb-5" xs={12} md={6} lg={4}>
+          <Col className="about-col" xs={12} md={6} lg={4}>
             <Card
              
               className="about-card shadow-lg"
             >
-              <Card.Body className="text-center">
+              <Image
+                className="about-img"
+                src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png"
+                roundedCircle
+              />
+              <Card.Body>
                 <Card.Title>Nombre</Card.Title>
                 <Card.Text>
                   Descripcion breve. Lorem ipsum dolor sit amet consectetur
@@ -122,12 +138,17 @@ const ACercaDeNosotros = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col className="about-col mb-5" xs={12} md={6} lg={4}>
+          <Col className="about-col" xs={12} md={6} lg={4}>
             <Card
             
               className="about-card shadow-lg"
             >
-              <Card.Body className="text-center">
+              <Image
+                className="about-img"
+                src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png"
+                roundedCircle
+              />
+              <Card.Body>
                 <Card.Title>Nombre</Card.Title>
                 <Card.Text>
                   Descripcion breve. Lorem ipsum dolor sit amet consectetur
@@ -136,23 +157,28 @@ const ACercaDeNosotros = () => {
                 </Card.Text>
                 <div>
                   <a href="">
-                    <i className="bi bi-github m-2"></i>
+                    <i class="bi bi-github m-2"></i>
                   </a>
                   <a href="">
-                    <i className="bi bi-linkedin m-2"></i>
+                    <i class="bi bi-linkedin m-2"></i>
                   </a>
                   <a href="">
-                    <i className="bi bi-instagram m-2"></i>
+                    <i class="bi bi-instagram m-2"></i>
                   </a>
                 </div>
               </Card.Body>
             </Card>
           </Col>
-          <Col className="about-col mb-5" xs={12} md={6} lg={4}>
+          <Col className="about-col" xs={12} md={6} lg={4}>
             <Card
               className="about-card shadow-lg"
             >
-              <Card.Body className="text-center">
+              <Image
+                className="about-img"
+                src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png"
+                roundedCircle
+              />
+              <Card.Body>
                 <Card.Title>Nombre</Card.Title>
                 <Card.Text>
                   Descripcion breve. Lorem ipsum dolor sit amet consectetur
@@ -180,4 +206,4 @@ const ACercaDeNosotros = () => {
   );
 };
 
-export default ACercaDeNosotros;
+export default ACercaDeNosotros
