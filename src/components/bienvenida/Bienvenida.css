@@ -1,0 +1,31 @@
+#contenedor{
+    min-height: 100vh;
+    position: relative;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.capa{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.info{
+    position: relative;
+    top: 25vh;
+    z-index: 2;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+}
