@@ -1,36 +1,50 @@
+body{
+  background-image: url("public/rolling fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contenedor{
+  margin: 27vh 0 15vh;
+  width: 60%;
+  margin-inline: auto;
+  padding: 2%;
+  text-align: center;
 
-/*A cerca de nosotros*/
+  background-color: rgba(0, 0, 0, 0.802);
+}
+.contenedor-foto{
+  width: 35%;
+  border-radius: 100%;
+}
 
-.about-card{
-    width: 18rem;
-    margin-top: 3rem;
-    background-color: #f4f5f6;
-    -webkit-transition:all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-    -ms-transition: all 0.25s ease-in-out;
-    -o-transition: all 0.25s ease-in-out;
-    transition: 0.25s ease-in-out;;
+.contenedor-caja2{
+  text-align: center;
+  padding: 2%;
+}
+.contenedor-caja2-titulo{
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #B08D59;
+}
+
+.contenedor-caja2-nav{
+  width: 40%;
+  margin: 0 auto;
+}
+
+.contenedor-caja2-nav svg{
+  color: #B08D59;
+  width: 30px;
+  height: 30px;
+}
+
+@media only screen and (max-width: 600px){
+  .contenedor{
+    width: 100%;
+    margin: 13vh 0 0vh;
   }
-  .about-card:hover{
-    background-color: #B08D59;
+
+  .contenedor-caja2-nav{
+    width: 100%;
   }
-  .about-img{
-    border: white solid;
-    transition: 0.5s;
-    object-fit: cover;
-  }
-  .about-img:hover{
-    transform: scale(1.1);
-  }
-  .about-col{
-    display: flex;
-    justify-content: center;
-    
-  }
-  
-  /* 
-  @media screen and (max-width: 900px){
-    .about-card{
-      margin-bottom: 250px;
-    }
-  } */
+}
