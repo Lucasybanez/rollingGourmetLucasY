@@ -9,26 +9,22 @@ section{
 }
 
 .info-custom{
-    background-image: url("../public/el-mercado.jpg") ;
-    background-size: cover;
-    height: 600px;
     display: flex;
     align-items: center; 
+    width: ;
+    margin: 0 auto;
 }
 
 .cartel-customclaro{
     height: 500px;
     width: 500px;
     background-color: rgba(255, 255, 255, 0.9);
-    margin-left: 100px;
     text-align: center;
 }
 
 .cartel-customoscuro{
     height: 500px;
-    width: 500px;
     background-color: rgba(0, 0, 0, 0.9);
-    margin-left: 100px;
     text-align: center;
     color: white;
 }

@@ -17,8 +17,8 @@ function App() {
       <NavbarContexto>
         <UserContext>
            <Header/> 
-          <PaginaPrincipal></PaginaPrincipal>
-      <Footer/>
+            <PaginaPrincipal/>
+           <Footer/>
         </UserContext>
       </NavbarContexto>
     </>

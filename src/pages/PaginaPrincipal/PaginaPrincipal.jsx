@@ -7,6 +7,7 @@ import Galeria from "../../components/galeria/Galeria";
 import { useState } from "react";
 import { NavbarContext } from "../../context/NavbarContext";
 import Bienvenida from "../../components/bienvenida/Bienvenida"
+import Presentacion from "../../components/presentacion/Presentacion";
 
 const PaginaPrincipal = () => {
 const {theme} =useContext(NavbarContext)
@@ -14,6 +15,7 @@ const {theme} =useContext(NavbarContext)
   return (
     <>
       <Bienvenida/>
+      <Presentacion/>
       <Menu theme={theme} />
       <Reviews theme={theme} />
       <Galeria theme={theme} />

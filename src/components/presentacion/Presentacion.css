@@ -1,0 +1,8 @@
+.presentacion_contenedor{
+    display: flex;
+    height: 800px;
+    background-color: black;
+    width: 80%;
+    margin: 5% auto;
+    text-align: center;
+}
