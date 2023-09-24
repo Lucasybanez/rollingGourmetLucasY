@@ -3,16 +3,17 @@ import style from "./Presentacion.css"
 const Presentacion = () => {
     return (
         <>
-            <div className="presentacion_contenedor">
-                <img src="public/ilustracion1.jpg" alt="" />
-                <div>
+            <div className="container presentacion_contenedor">
+                <div className="row">
+                <img src="public/ilustracion1.jpg" alt="" className="col-lg-4 col-sm-12 p-2"/>
+                <div className="col-lg-8 col-sm-12">
                     <h3 className="titulo-custom">ACERCA DE NOSOTROS</h3>
                     <p>
                         Bienvenido a nuestro sofisticado rincón italiano en el corazón de Puerto Madero, Buenos Aires. En nuestro restaurante, deleitarás tus sentidos con una auténtica experiencia gastronómica italiana. Descubre la diversidad de sabores que ofrecemos, desde exquisitas pastas y pizzas artesanales hasta selectos vinos y deliciosos postres. Nuestro acogedor ambiente moderno te invita a disfrutar de momentos inolvidables con tus seres queridos. ¡Sumérgete en la cultura culinaria de Italia y déjate cautivar por nuestro sabor único y distinguido
                     </p>
-                    <div className="info-custom">
+                    <div className="info-custom mt-2">
                         <div className={`cartel-customoscuro`}>
-                        <h3 className={`text-center mt-3 color-infooscuro`}>INFORMACIÓN</h3>
+                        <h3  className={`text-center mt-3 info-dorado`}>INFORMACIÓN</h3>
                         <hr />
                         <p className="d-inline-block info-negra ms-2">Horarios</p>
                         <p className="d-inline-block info-dorado ms-2">11:30 am - 12:00 pm</p>
@@ -32,6 +33,7 @@ const Presentacion = () => {
                         </p>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </>

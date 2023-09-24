@@ -20,7 +20,7 @@ const Galeria = ({theme}) => {
   return (
     <>
     <hr />
-      <div className={`body-galeria${theme} container`}>
+      <div className={`body-galeriaoscuro container`}>
         <h2 className="text-center titulo-galeria">
           <br></br>{t('galeria')}
         </h2>

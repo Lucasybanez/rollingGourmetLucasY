@@ -16,9 +16,9 @@ const {theme} =useContext(NavbarContext)
     <>
       <Bienvenida/>
       <Presentacion/>
-      <Menu theme={theme} />
-      <Reviews theme={theme} />
-      <Galeria theme={theme} />
+      <Menu/>
+      <Reviews/>
+      <Galeria/>
     </>
   );
 };

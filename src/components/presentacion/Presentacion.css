@@ -1,8 +1,11 @@
 .presentacion_contenedor{
     display: flex;
-    height: 800px;
     background-color: black;
-    width: 80%;
-    margin: 5% auto;
+    width: 100%;
+    margin: 3% auto;
     text-align: center;
+}
+
+.presentacion_contenedor_caja2{
+    padding: 10%;
 }
