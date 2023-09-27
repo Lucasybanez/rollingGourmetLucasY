@@ -113,13 +113,14 @@ function Registro() {
     <div className="background-image">
       <Container className="ubicarCarta mt-4 mb-4">
         <div className="Carta text-center">
-          <h3 className="mt-3">No tienes cuenta?</h3>
-          <h3 className="">Create una!</h3>
-          <img src={logo} alt="Logo de la pagina" className="img-fluid" />
-          <div className="section text-center">
+          <h3 className="mt-3">¿No tienes cuenta?</h3>
+          <h3 className="">¡Crea una!</h3>
+          <img src="public/RollingGourmetIsotipo sin fondo.png" alt="Logo de la pagina" className="img-fluid" />
+          <h3>Rolling Gourmet</h3>
+          <div className="section text-center mt-5">
             <Form onSubmit={formik.handleSubmit} noValidate>
               <Form.Group className="contenedorForm">
-                <Form.Label className="label-color">Nombre</Form.Label>
+                <Form.Label className="label-color mt-3">Nombre</Form.Label>
                 <div className="input-group">
                   <img
                     src="/src/assets/usuario.png"
