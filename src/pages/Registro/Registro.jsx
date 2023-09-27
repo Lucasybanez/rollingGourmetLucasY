@@ -114,10 +114,10 @@ function Registro() {
       <Container className="ubicarCarta mt-4 mb-4">
         <div className="Carta text-center">
           <h3 className="mt-3">¿No tienes cuenta?</h3>
-          <h3 className="">¡Crea una!</h3>
+          <h3 className="label-color">¡Crea una!</h3>
           <img src="public/RollingGourmetIsotipo sin fondo.png" alt="Logo de la pagina" className="carta_logo" />
-          <h3>Rolling Gourmet</h3>
-          <div className="section text-center mt-5">
+          <h3 className="">Rolling Gourmet</h3>
+          <div className="section mt-5">
             <Form onSubmit={formik.handleSubmit} noValidate>
               <Form.Group className="contenedorForm">
                 <Form.Label className="label-color ">Nombre</Form.Label>
@@ -267,7 +267,7 @@ function Registro() {
 
               <div className=" text-center mb-3">
                 <Link to={"/Login"} className="link ">
-                  Ya tienes una cuenta? Inicia Sesion!
+                  ¿Ya tienes una cuenta? ¡Inicia Sesion!
                 </Link>
               </div>
             </Form>

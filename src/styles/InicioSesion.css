@@ -12,10 +12,10 @@
     max-width: auto;
    }
    .Carta{
-    padding: 0 !important;
-}
+    padding: 3% !important;
+    }
 .form-control{
-    width: auto ;
+    width: 80% ;
 }
 .contenedorForm{
     display: flex;
@@ -40,7 +40,7 @@ margin-left: 10px;
 display: flex;
 flex-direction: column;
 align-items: center;
-}  
+}
   
 /*Estilo para texto error en login*/
 .text-danger{
@@ -73,6 +73,9 @@ background-color: rgba(0, 0, 0, 0.941);
 padding: 0 35px;  
 margin-top: 5vh;
 margin-bottom: 5vh;
+color: #B08D59 !important;
+text-align: start;
+
 }
 
 .carta_logo{
@@ -157,7 +160,8 @@ overflow-x: hidden;
 }
 
 .label-color {
-color: #ffffff;
+  color: #B08D59;
+  font-weight: 1000;
 }
 
 .Contenedor-Error{
