@@ -115,12 +115,12 @@ function Registro() {
         <div className="Carta text-center">
           <h3 className="mt-3">¿No tienes cuenta?</h3>
           <h3 className="">¡Crea una!</h3>
-          <img src="public/RollingGourmetIsotipo sin fondo.png" alt="Logo de la pagina" className="img-fluid" />
+          <img src="public/RollingGourmetIsotipo sin fondo.png" alt="Logo de la pagina" className="carta_logo" />
           <h3>Rolling Gourmet</h3>
           <div className="section text-center mt-5">
             <Form onSubmit={formik.handleSubmit} noValidate>
               <Form.Group className="contenedorForm">
-                <Form.Label className="label-color mt-3">Nombre</Form.Label>
+                <Form.Label className="label-color ">Nombre</Form.Label>
                 <div className="input-group">
                   <img
                     src="/src/assets/usuario.png"
@@ -154,7 +154,7 @@ function Registro() {
                 )}
               </Form.Group>
               <Form.Group className="contenedorForm">
-                <Form.Label className="label-color">
+                <Form.Label className="label-color mt-4">
                   Correo Electrónico{" "}
                 </Form.Label>
                 <div className="input-group">
@@ -190,7 +190,7 @@ function Registro() {
                 )}
               </Form.Group>
               <Form.Group className="contenedorForm">
-                <Form.Label className="label-color">Contraseña </Form.Label>
+                <Form.Label className="label-color mt-4">Contraseña </Form.Label>
                 <div className="input-group">
                   <img
                     src="/src/assets/contraseña.png"
@@ -224,7 +224,7 @@ function Registro() {
                 )}
               </Form.Group>
               <Form.Group className="contenedorForm">
-                <Form.Label className="label-color">
+                <Form.Label className="label-color mt-4">
                   Repite tu contraseña{" "}
                 </Form.Label>
                 <div className="input-group">
@@ -263,7 +263,7 @@ function Registro() {
                   )}
               </Form.Group>
 
-              <ButtonDefault namebtn="Crear cuenta" />
+              <ButtonDefault namebtn="Crear cuenta"/>
 
               <div className=" text-center mb-3">
                 <Link to={"/Login"} className="link ">
