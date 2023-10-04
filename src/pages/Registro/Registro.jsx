@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 
 function Registro() {
-  const url = import.meta.env.VITE_API;
+  const url = import.meta.env.VITE_API_USUARIOS;
 
   //Expresiones para validar
   const soloLetras = /^[a-zA-Z ]+$/;
@@ -61,48 +61,29 @@ function Registro() {
     validateOnBlur: true,
     onSubmit: (values) => {
       try {
-        //Alert de sweetalert para confirmar
-        Swal.fire({
-          title: "Ingresaste los datos correctamente?",
-          text: "Si revisaste todos los valores, y los ingresaste correctamente sigue adelante",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Si, esta todo bien",
-          cancelButtonText: "No, quiero cambiar algo",
-        }).then(async (result) => {
-          if (result.isConfirmed) {
-            //Guarda los valores del formulario
-            const Usuario = {
-              nombre: values.Nombre,
-              email: values.Email,
-              contrasenia: values.Contraseña,
-            };
-
-            axios
-              .post(`${url}/usuarios`, Usuario)
-              .then((response) => {
-                console.log("Usuario creado con exito");
-                Swal.fire(
-                  "Usuario credo con exito",
-                  "Tus datos ya fueron ingresados exitosamente",
-                  "success"
-                );
-              })
-              .catch((error) => {
-                Swal.fire(
-                  "No se pudo crear el usuario",
-                  " ",
-                  "warning"
-                );
-                console.error(error);
-              });
-
-            console.log(Usuario);
-            //Agregar funcion para redirigirte a inicio
-          }
-        });
+        const crear = async () => {
+          const Usuario = {
+            nombre: values.Nombre,
+            email: values.Email,
+            contrasenia: values.Contraseña
+          };
+          const response = await axios.post(url, Usuario)
+          .then(()=>{
+              Swal.fire(
+                "Usuario credo con exito",
+                "Tus datos ya fueron ingresados exitosamente",
+                "success"
+              );
+          }).catch(()=>{
+            Swal.fire(
+              "No se pudo crear el usuario",
+              " ",
+              "warning"
+            );
+          })
+          //Agregar funcion para redirigirte a inicio
+        }        
+        crear();
       } catch (error) {
         console.log(error);
       }
