@@ -1,0 +1,17 @@
+body {
+    background-image: url(../../../public/contactofondo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.nav{
+    background-color: white !important;
+}
+
+
+@media only screen and (max-width: 1068px) {
+    .tabla{
+        display: none;
+    }
+}

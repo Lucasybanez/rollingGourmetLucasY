@@ -1,0 +1,35 @@
+body {
+    background-image: url(../../../public/contactofondo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.nav{
+    background-color: white !important;
+}
+.tabla{
+    width: 70%;
+    margin: 2% auto;
+    padding: 1% ;
+    background-color: #F0E5D8;
+}
+
+.tablaDiv{
+    background-color: aqua !important;
+}
+
+.cards{
+    display: none;
+}
+
+@media only screen and (max-width: 1068px) {
+    .cards{
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .tabla{
+        display: none;
+    }
+}
