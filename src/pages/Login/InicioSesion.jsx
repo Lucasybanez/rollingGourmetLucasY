@@ -15,8 +15,7 @@ function InicioSesion() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   //Url de un back de prueba para que la funcion de logueo quede guardada para cuando usemos el back
-  /* const url = "http://localhost:8001/api/usuarios/login"; */
-  const url = import.meta.env.VITE_API;
+  const url = import.meta.env.VITE_API_USUARIOS;
 
   //UseState para mostrar un mensaje de que los datos ingresados no se encontraron
   const [UsuarioLogueadoError, setUsuarioLogueadoError] = useState(false);
@@ -47,33 +46,37 @@ function InicioSesion() {
           email: values.email,
           contrasenia: values.contrasenia,
         };
-        console.log(usuarioLogueado);
-        // Hago el pedido con axios
-        const response = await axios.post(`${url}/login`, usuarioLogueado);
-        console.log(response);
-        // Si la petición es exitosa
-        Swal.fire(
-          "Usuario logueado con exito",
-          "Tus datos ya fueron ingresados exitosamente",
-          "success"
-        );
-
-        // Guardo el token en el estado o en el LocalStorage si es necesario
-        const jwtToken = response.data.data.token;
-        setUsuarioLogueadoError(false); // No olvides manejar el estado de error
-        console.log(jwtToken);
-
-        // Aquí puedes decidir si deseas guardar el token en el estado o en LocalStorage
-        /* setTokenEnEstado(jwtToken); */
-        localStorage.setItem("user", JSON.stringify(jwtToken));
+        console.log("email", usuarioLogueado.email);
+        console.log("contra", usuarioLogueado.contrasenia)
+        const iniciarSesion = async () => {
+          const response = await axios.get(url, {params: {Email: usuarioLogueado.email, Contrasena: usuarioLogueado.contrasenia}})
+          .then(response=>{
+            console.log(response.data)
+            if(response.data.length>0){
+              Swal.fire(
+                "Usuario logueado con exito",
+                "Tus datos ya fueron ingresados exitosamente",
+                "success"
+              );
+              setIsLoogedIn(true);
+            }
+            else{
+            Swal.fire("Usuario no encontrado", " ", "warning");
+            }
+          }).catch(error=>{
+            console.log(response.data);
+            Swal.fire("Usuario no encontrado", " ", "warning");
+            setUsuarioLogueadoError(true);
+            console.error(error.response); // Muestra los detalles del error en la consola
+          })
+        }
         
-        setIsLoogedIn(true);
+        iniciarSesion();
       
       } catch (error) {
         // Si la petición falla
-        Swal.fire("No se pudo loguear el usuario", " ", "warning");
-        setUsuarioLogueadoError(true);
-        console.error(error.response); // Muestra los detalles del error en la consola
+        Swal.fire("Algo falló en la autenticación de usuario", " ", "warning");
+
       }
     },
   });
@@ -88,7 +91,7 @@ function InicioSesion() {
       <Container className="ubicarCarta">
         <div className="Carta mt-3 mb-3 text-center">
           <h3 className="mt-3">Bienvenido!</h3>
-          <img src={logo} alt="Logo de la pagina" className="img-fluid" />
+          <img src="public/RollingGourmetIsotipo sin fondo.png" alt="Logo de la pagina" className="carta_logo my-5" />
           {UsuarioLogueadoError === true && (
             <div className="d-flex justify-content-center">
               <span role="alert" className="text-danger">
@@ -96,7 +99,7 @@ function InicioSesion() {
               </span>
             </div>
           )}
-          <Form onSubmit={formik.handleSubmit} noValidate>
+          <Form onSubmit={formik.handleSubmit} noValidate className="">
             <Form.Group className="contenedorForm">
               <Form.Label className="label-color">
                 Ingresa tu correo electronico{" "}
@@ -169,10 +172,6 @@ function InicioSesion() {
             </Form.Group>
 
             <ButtonDefault namebtn="ingresar" TipoBoton="sumbit" />
-
-            {/* <button className="btn mt-3 mb-3" type="submit">
-              Ingresar
-            </button>  */}
           </Form>
           <br />
 

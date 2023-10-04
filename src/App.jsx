@@ -8,6 +8,7 @@ import UserContext from "./context/UserContext";
 import "./i18n";
 import { NavbarContext, NavbarContexto } from "./context/NavbarContext.jsx";
 import Registro from "./pages/Registro/Registro"
+import InicioSesion from "./pages/Login/InicioSesion"
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
       <NavbarContexto>
         <UserContext>
            <Header/> 
-            <Registro/>
+            <InicioSesion/>
            <Footer/>
         </UserContext>
       </NavbarContexto>

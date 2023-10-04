@@ -64,8 +64,8 @@ function Registro() {
         const crear = async () => {
           const Usuario = {
             nombre: values.Nombre,
-            email: values.Email,
-            contrasenia: values.Contraseña
+            Email: values.Email,
+            Contrasena: values.Contraseña
           };
           const response = await axios.post(url, Usuario)
           .then(()=>{

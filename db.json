@@ -49,6 +49,28 @@
       "email": "pepeeee@pepe.com",
       "contrasenia": "123456789Abc",
       "id": "VtT3Bgn"
+    },
+    {
+      "email": "pepeeee@pepe.com",
+      "contrasenia": "123456789Abc",
+      "id": "n5MLMu9"
+    },
+    {
+      "email": "pepeeee@pepe.com",
+      "contrasenia": "123456789Abc",
+      "id": "WQXcGxu"
+    }
+  ],
+  "Logueados": [
+    {
+      "email": "pepe@pepe.com",
+      "contrasenia": "123456789Abc",
+      "id": 1
+    },
+    {
+      "email": "lucas@lucas.com",
+      "contrasenia": "1234",
+      "id": 2
     }
   ]
 }
