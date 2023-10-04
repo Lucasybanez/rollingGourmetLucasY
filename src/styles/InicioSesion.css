@@ -48,8 +48,8 @@ align-items: center;
 }
 
 
-.background-image {
-margin-top: 12vh;
+body {
+margin-top: 20vh;
 top: 0;
 left: 0;
 width: 100%;
@@ -62,6 +62,7 @@ z-index: -1;
 } 
 
 .ubicarCarta {
+margin-bottom: 10vh;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -79,7 +80,7 @@ text-align: start;
 }
 
 .carta_logo{
-  width: 30%;
+  width: 40%;
   margin-top: 4%;
 }
 

@@ -90,7 +90,7 @@ function InicioSesion() {
     <div className="background-image">
       <Container className="ubicarCarta">
         <div className="Carta mt-3 mb-3 text-center">
-          <h3 className="mt-3">Bienvenido!</h3>
+          <h3 className="mt-5">¡Bienvenido!</h3>
           <img src="public/RollingGourmetIsotipo sin fondo.png" alt="Logo de la pagina" className="carta_logo my-5" />
           {UsuarioLogueadoError === true && (
             <div className="d-flex justify-content-center">
