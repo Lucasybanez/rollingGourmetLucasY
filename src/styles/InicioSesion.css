@@ -2,6 +2,8 @@
 
   /* Resolución para Pantallas de Celulares */  
 @media (max-width: 767px) {
+  body{
+  }
     .Carta{
       width: 100% !important;
    }
@@ -50,14 +52,9 @@ align-items: center;
 
 body {
 margin-top: 20vh;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
 background-image: url("public/contactofondo.jpg");
 background-repeat: no-repeat;
-background-size: cover;
-z-index: -1; 
+background-size: cover !important;
 
 } 
 
