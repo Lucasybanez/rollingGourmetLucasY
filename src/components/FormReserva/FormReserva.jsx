@@ -126,8 +126,13 @@ const FormReserva = () =>{
                 id="fecha"
                 {...formik.getFieldProps("fecha")}
                 onChange={(date) => {
-                  formik.setFieldValue("fecha",date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear());
-                  setFecha(date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear());
+                  const day = String(date.getDate()).padStart(2, '0'); // Formatear día con dos dígitos
+                  const month = String(date.getMonth() + 1).padStart(2, '0'); // Formatear mes con dos dígitos
+                  const year = date.getFullYear();
+                  const formattedDate = `${day}/${month}/${year}`;
+                  
+                  formik.setFieldValue("fecha", formattedDate);
+                  setFecha(formattedDate);
                 }}
               />
               {formik.touched.fecha && formik.errors.fecha && (
