@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <>
-      <Container fluid className={`footer${theme}`}>
+      <Container fluid className={`footeroscuro`}>
         <Row className="text-center">
           <Col sm={12} lg={3}>
             <img
