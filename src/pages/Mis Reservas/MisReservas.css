@@ -1,0 +1,46 @@
+body{
+    background-color: rgb(0, 0, 0) !important;
+}
+
+.titulo{
+    margin-top: 10% !important;
+}
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 3%;
+}
+
+.caja{
+    width: 20%;
+    margin: 2%;
+    background-color: #B08D59;
+    border-radius: 0px;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.caja img{
+    border-radius: 0px;
+
+}
+
+.textos{
+    background-color: #B08D59;
+    color: black;
+    border: none;
+}
+
+@media only screen and (max-width: 1068px) {
+    .contenedor{
+        display: block;
+        margin: 0;
+    }
+    
+    .caja{
+        width: 90%;
+        margin: 2% auto;
+    }
+}
