@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../Login/InicioSesion.module.css";
+import style from "../Login/InicioSesion.module.css";
 import ButtonDefault from "../../components/ButtonDefault";
 import logo from "../../assets/logo.png";
 import { Link, Navigate } from "react-router-dom";
@@ -91,22 +91,22 @@ function Registro() {
   });
 
   return (
-    <div className="background-image">
-      <Container className="ubicarCarta mt-4 mb-4">
-        <div className="Carta text-center">
+    <div>
+      <Container className={`${style.ubicarCarta}`}>
+        <div className={`${style.Carta} text-center`}>
           <h3 className="mt-3">¿No tienes cuenta?</h3>
-          <h3 className="label-color">¡Crea una!</h3>
-          <img src="public/RollingGourmetIsotipo sin fondo.png" alt="Logo de la pagina" className="carta_logo" />
-          <h3 className="">Rolling Gourmet</h3>
+          <h3 className={`${style.label_color}`}>¡Crea una!</h3>
+          <img src="public/RollingGourmetIsotipo sin fondo.png" alt="Logo de la pagina" className={`${style.carta_logo}`} />
+          <h3>Rolling Gourmet</h3>
           <div className="section mt-5">
             <Form onSubmit={formik.handleSubmit} noValidate>
-              <Form.Group className="contenedorForm">
-                <Form.Label className="label-color ">Nombre</Form.Label>
+              <Form.Group className={`${style.contenedorForm}`}>
+                <Form.Label className={`${style.label_color}`}>Nombre</Form.Label>
                 <div className="input-group">
                   <img
                     src="/src/assets/usuario.png"
                     alt="Imagen"
-                    className="usuario-icono"
+                    className={`${style.usuario_icono}`}
                   />
                   <Form.Control
                     type="text"
@@ -135,14 +135,14 @@ function Registro() {
                 )}
               </Form.Group>
               <Form.Group className="contenedorForm">
-                <Form.Label className="label-color mt-4">
+                <Form.Label className={`${style.label_color} mt-4`}>
                   Correo Electrónico{" "}
                 </Form.Label>
                 <div className="input-group">
                   <img
                     src="/src/assets/iconoCorreo.png"
                     alt="Imagen"
-                    className="correo-icono"
+                    className={`${style.correo_icono}`}
                   />
                   <Form.Control
                     type="text"
@@ -170,13 +170,13 @@ function Registro() {
                   
                 )}
               </Form.Group>
-              <Form.Group className="contenedorForm">
-                <Form.Label className="label-color mt-4">Contraseña </Form.Label>
+              <Form.Group className={`${style.contenedorForm}`}>
+                <Form.Label className={`${style.label_color} mt-4`}>Contraseña </Form.Label>
                 <div className="input-group">
                   <img
                     src="/src/assets/contraseña.png"
                     alt="Imagen"
-                    className="contraseña-icono"
+                    className={`${style.contraseña_icono}`}
                   />
                   <Form.Control
                     type="password"
@@ -204,15 +204,15 @@ function Registro() {
                   
                 )}
               </Form.Group>
-              <Form.Group className="contenedorForm">
-                <Form.Label className="label-color mt-4">
+              <Form.Group className={`${style.contenedorForm}`}>
+                <Form.Label className={`${style.label_color} mt-4`}>
                   Repite tu contraseña{" "}
                 </Form.Label>
                 <div className="input-group">
                   <img
                     src="/src/assets/contraseña.png"
                     alt="Imagen"
-                    className="contraseña-icono"
+                    className={`${style.contraseña_icono}`}
                   />
                   <Form.Control
                     type="password"
