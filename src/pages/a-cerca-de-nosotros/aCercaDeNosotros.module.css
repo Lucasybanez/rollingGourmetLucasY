@@ -1,38 +1,38 @@
-{
+.page{
   background-image: url("public/rolling fondo.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
 }
 .contenedor{
-  margin: 27vh 0 15vh;
   width: 60%;
   margin-inline: auto;
   padding: 2%;
   text-align: center;
-
   background-color: rgba(0, 0, 0, 0.802);
+  position: relative;
+  top: 19vh;
 }
-.contenedor-foto{
+.contenedor_foto{
   width: 35%;
   border-radius: 100%;
 }
 
-.contenedor-caja2{
+.contenedor_caja2{
   text-align: center;
   padding: 2%;
 }
-.contenedor-caja2-titulo{
+.contenedor_caja2_titulo{
   font-size: 2.5rem;
   font-weight: 500;
   color: #B08D59;
 }
 
-.contenedor-caja2-nav{
+.contenedor_caja2_nav{
   width: 40%;
   margin: 0 auto;
 }
 
-.contenedor-caja2-nav svg{
+.contenedor_caja2_nav svg{
   color: #B08D59;
   width: 30px;
   height: 30px;
@@ -44,7 +44,7 @@
     margin: 13vh 0 0vh;
   }
 
-  .contenedor-caja2-nav{
+  .contenedor_caja2_nav{
     width: 100%;
   }
 }
