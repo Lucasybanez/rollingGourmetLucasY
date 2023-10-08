@@ -63,7 +63,7 @@ function Registro() {
       try {
         const crear = async () => {
           const Usuario = {
-            nombre: values.Nombre,
+            Nombre: values.Nombre,
             Email: values.Email,
             Contrasena: values.Contraseña
           };

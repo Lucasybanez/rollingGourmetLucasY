@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import style from "./FormReserva.css"
+import style from "./FormReserva.module.css"
 import { useFormik } from 'formik';
 import * as Yup from "yup";
 import clsx from "clsx";
@@ -16,7 +16,7 @@ const FormReserva = () =>{
     const url = import.meta.env.VITE_API_RESERVAS;
 
     const [fecha, setFecha] = useState("");
-    const [cantPersonas, setCantPersonas] = useState(0);
+    const [cantPersonas, setCantPersonas] = useState(1);
     const [hora, setHora] = useState("");
 
     // ESQUEMA
@@ -115,10 +115,10 @@ const FormReserva = () =>{
 
 
     return(
-        <div className='contenedor'>
+        <div className={`${style.contenedor}`}>
             <h1>Crear reserva</h1>
             <Form onSubmit={formik.handleSubmit} noValidate>
-            <Form.Group className='mt-4 contendor_inputs'>
+            <Form.Group className={`${style.contenedor_inputs} mt-4`}>
               <Form.Label className='mx-1'>Fecha:</Form.Label>
               <br />
               <DatePicker
@@ -142,7 +142,7 @@ const FormReserva = () =>{
               )}
             </Form.Group>
 
-            <Form.Group className='mt-4 contendor_inputs'>
+            <Form.Group className={`${style.contenedor_inputs} mt-4`}>
               <Form.Label>Hora</Form.Label>
               <Form.Select aria-label="Default select example"
                               name="hora"
@@ -178,7 +178,7 @@ const FormReserva = () =>{
                 </Form.Select>
             </Form.Group>
 
-            <Form.Group className='mt-4 contendor_inputs'>
+            <Form.Group className={`${style.contenedor_inputs} mt-4`}>
               <Form.Label>Cantidad de Personas</Form.Label>
               <Form.Control
                 type="number"
@@ -216,7 +216,7 @@ const FormReserva = () =>{
               )}
             </Form.Group>
 
-                <Button variant="primary" type="submit" className='mt-5 contenedor_inputs'>
+                <Button variant="primary" type="submit" className={`${style.contenedor_inputs} mt-5`}>
                     Consultar disponibilidad
                 </Button>
             </Form>

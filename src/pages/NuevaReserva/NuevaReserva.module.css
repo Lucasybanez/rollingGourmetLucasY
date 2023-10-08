@@ -7,8 +7,10 @@
     margin: 0 auto 13rem;
     position: relative;
     top: 10rem;
+    padding: 0;
 }
 .contenedor1_caja1{
+    margin: 0;
 }
 .contenedor1_img{
     width: 100%;
