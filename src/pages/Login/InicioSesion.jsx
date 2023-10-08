@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../styles/InicioSesion.css";
+import style from "./InicioSesion.module.css";
 import ButtonDefault from "../../components/ButtonDefault";
 import logo from "../../assets/logo.png";
 import { Link, Navigate, useNavigate } from "react-router-dom";
@@ -87,11 +87,11 @@ function InicioSesion() {
   };
 
   return (
-    <div className="background-image">
-      <Container className="ubicarCarta">
-        <div className="Carta mt-3 mb-3 text-center">
+    <div>
+      <Container className={`${style.ubicarCarta}`}>
+        <div className={`${style.Carta} mt-3 mb-3 text-center`}>
           <h3 className="mt-5">¡Bienvenido!</h3>
-          <img src="public/RollingGourmetIsotipo sin fondo.png" alt="Logo de la pagina" className="carta_logo my-5" />
+          <img src="public/RollingGourmetIsotipo sin fondo.png" alt="Logo de la pagina" className={`${style.carta_logo} my-5`}/>
           {UsuarioLogueadoError === true && (
             <div className="d-flex justify-content-center">
               <span role="alert" className="text-danger">
@@ -100,15 +100,15 @@ function InicioSesion() {
             </div>
           )}
           <Form onSubmit={formik.handleSubmit} noValidate className="">
-            <Form.Group className="contenedorForm">
-              <Form.Label className="label-color">
+            <Form.Group classNameclassName={`${style.contenedorForm} my-5`}>
+              <Form.Label className={`${style.label_color}`}>
                 Ingresa tu correo electronico{" "}
               </Form.Label>
               <div className="input-group">
                 <img
                   src="/src/assets/iconoCorreo.png"
                   alt="Imagen"
-                  className="correo-icono"
+                  className={`${style.correo_icono}`}
                 />
                 <Form.Control
                   type="text"
@@ -134,15 +134,15 @@ function InicioSesion() {
                 </div>
               )}
             </Form.Group>
-            <Form.Group className="contenedorForm">
-              <Form.Label className="label-color">
+            <Form.Group className={`${style.contenedorForm}`}>
+              <Form.Label className={`${style.label_color}`}>
                 Ingresa tu contrasenia{" "}
               </Form.Label>
               <div className="input-group">
                 <img
                   src="/src/assets/contraseña.png"
                   alt="Imagen"
-                  className="contraseña-icono"
+                  className={`${style.contraseña_icono}`}
                 />
                 <Form.Control
                   type="password"

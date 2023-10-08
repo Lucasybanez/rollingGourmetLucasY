@@ -2,15 +2,13 @@
 
   /* Resolución para Pantallas de Celulares */  
 @media (max-width: 767px) {
-  body{
-  }
     .Carta{
       width: 100% !important;
    }
    .contenedorForm{
     width: auto !important;
    }
-   .Div-Contraseña{
+   .Div_Contraseña{
     max-width: auto;
    }
    .Carta{
@@ -45,12 +43,12 @@ align-items: center;
 }
   
 /*Estilo para texto error en login*/
-.text-danger{
+.text_danger{
   max-width: 38vh;
 }
 
 
-body {
+.page {
 margin-top: 20vh;
 background-image: url("public/contactofondo.jpg");
 background-repeat: no-repeat;
@@ -60,6 +58,7 @@ background-size: cover !important;
 
 .ubicarCarta {
 margin-bottom: 10vh;
+margin-top: 19vh;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -122,7 +121,7 @@ color: #ffeba7;
 } 
 
 
-body{  
+.page{  
 font-family: 'Poppins', sans-serif;  
 font-weight: 300;  
 font-size: 18px;  
@@ -135,41 +134,41 @@ background-size: 350%;
 overflow-x: hidden;  
 } 
 
-.usuario-icono {
+.usuario_icono {
   width: 40px;
   height: auto;
   margin-right: 10px;
 }
 
-.correo-icono {
+.correo_icono {
   width: 40px;
   height: auto;
   margin-right: 10px;
 }
 
-.contraseña-icono {
+.contraseña_icono {
   width: 40px;
   height: auto;
   margin-right: 10px;
 }
 
-.text-after-input {
+.text_after_input {
   color: #fff;
 }
 
-.label-color {
+.label_color {
   color: #B08D59;
   font-weight: 1000;
 }
 
-.Contenedor-Error{
+.Contenedor_Error{
   background-color: rgba(0, 0, 0, 0.5); /* Fondo con opacidad */
   width: fit-content;
   padding: 1vh;
 
 }
 
-.Contenedor-Error {
+.Contenedor_Error {
 position: relative;  
 width: 27vh;
 height: 4vh;
@@ -182,7 +181,7 @@ background-color: #dfd5ce;
 
 }
 
-.Contenedor-Error2 {
+.Contenedor_Error2 {
   position: relative;  
   width: 27vh;
   height: 4vh;
@@ -196,7 +195,7 @@ background-color: #dfd5ce;
   }
 
 @media (max-width: 390px) {
-.Contenedor-Error {
+.Contenedor_Error {
   position: relative;  
   width: 36vh;
   height: 5vh;

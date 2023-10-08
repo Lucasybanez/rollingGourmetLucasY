@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../styles/InicioSesion.css";
+import "../Login/InicioSesion.module.css";
 import ButtonDefault from "../../components/ButtonDefault";
 import logo from "../../assets/logo.png";
 import { Link, Navigate } from "react-router-dom";
