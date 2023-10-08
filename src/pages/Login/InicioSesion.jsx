@@ -87,7 +87,7 @@ function InicioSesion() {
   };
 
   return (
-    <div>
+    <div className={style.page}>
       <Container className={`${style.ubicarCarta}`}>
         <div className={`${style.Carta} mt-3 mb-3 text-center`}>
           <h3 className="mt-5">¡Bienvenido!</h3>

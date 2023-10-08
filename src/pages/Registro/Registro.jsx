@@ -91,7 +91,7 @@ function Registro() {
   });
 
   return (
-    <div>
+    <div className={style.page}>
       <Container className={`${style.ubicarCarta}`}>
         <div className={`${style.Carta} text-center`}>
           <h3 className="mt-3">¿No tienes cuenta?</h3>

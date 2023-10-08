@@ -1,4 +1,7 @@
-  
+  .page{
+    background-image: url(public/contactofondo.jpg);
+    background-size: cover;
+  }
 
   /* Resolución para Pantallas de Celulares */  
 @media (max-width: 767px) {
