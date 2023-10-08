@@ -8,7 +8,7 @@ import UserContext from "./context/UserContext";
 import "./i18n";
 //import { useContext, useState } from "react";
 import { NavbarContext, NavbarContexto } from "./context/NavbarContext.jsx";
-import ACercaDeNosotros from './pages/a-cerca-de-nosotros/ACercaDeNosotros'
+import PaginaPrincipal from "./pages/PaginaPrincipal/PaginaPrincipal"
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
       <NavbarContexto>
         <UserContext>
            <Header/> 
-            <ACercaDeNosotros/>
+            <PaginaPrincipal/>
            <Footer/>
         </UserContext>
       </NavbarContexto>

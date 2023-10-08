@@ -1,6 +1,4 @@
 import React, { useContext } from "react";
-import Header from "../../components/header/Header";
-import Info from "../../components/info/Info";
 import Menu from "../../components/menu/Menu";
 import Reviews from "../../components/reseñas/Reviews";
 import Galeria from "../../components/galeria/Galeria";
