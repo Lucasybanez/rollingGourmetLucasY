@@ -24,10 +24,10 @@ const CardsUsuarios = () =>{
             }).catch ((response)=>{
                 switch (response.response.status) {
                     case 404:
-                            alert("Página no encontrada de usuarios");
+                            Swal.fire("Página no encontrada de usuarios");
                         break;
                     case 500:
-                            alert("Sistema caído de usuarios");
+                            Swal.fire("Sistema caído de usuarios");
                         break;
                 }
             })
@@ -66,7 +66,7 @@ const CardsUsuarios = () =>{
           const response = await axios.delete(
             `${URL}/${id}`
           );
-          alert("Eliminado exitoso");
+          Swal.fire("Eliminado exitoso", '', 'success');
           handleClose();
         } catch (error) {
         }
@@ -88,7 +88,6 @@ const CardsUsuarios = () =>{
                         usuarios10.map((user)=>(
                             <>
                                 <Card className="w-100 my-3">
-                            <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2017/07/18/23/23/user-2517433_1280.png" />
                             <Card.Body>
                               <Card.Title>{user.Rol}</Card.Title>
                             </Card.Body>

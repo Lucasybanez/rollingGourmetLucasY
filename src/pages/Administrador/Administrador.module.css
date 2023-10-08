@@ -1,18 +1,28 @@
 body {
-    background-image: url(../../../public/contactofondo.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: black !important;
 }
-
 .nav{
     background-color: white !important;
 }
-.tabla{
+
+.componente{
+    border: 2px solid #B08D59 !important;
     width: 70%;
     margin: 2% auto;
+    height: auto;
+}
+.reservaciones{
+    position: relative;
+    top: 10vh;
+    margin-bottom: 7%;
+}
+.tabla{
+    width: 100%;
+    margin: 0 auto;
     padding: 1% ;
-    background-color: #F0E5D8;
+    background-color: #B08D59;
+    color: rgb(40, 40, 40);
+    border: 4px solid black;
 }
 
 .tablaDiv{
@@ -30,6 +40,10 @@ body {
         margin: 0 auto;
     }
     .tabla{
+        display: none;
+    }
+
+    .componente{
         display: none;
     }
 }

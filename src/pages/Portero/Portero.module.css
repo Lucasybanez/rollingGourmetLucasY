@@ -1,12 +1,5 @@
 body {
-    background-image: url(../../../public/contactofondo.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.nav{
-    background-color: white !important;
+    background-color: black;
 }
 
 

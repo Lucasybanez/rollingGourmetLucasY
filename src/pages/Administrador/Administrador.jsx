@@ -1,7 +1,7 @@
-import TablaUsuarios from "../../Components/TablaUsuarios";
-import TablaReservas from "../../Components/TablaReservas";
-import CardsReservas from "../../Components/CardsReservas";
-import CardsUsuarios from "../../Components/CardsUsuarios";
+import TablaUsuarios from "../../components/TablaUsuarios";
+import TablaReservas from "../../components/TablaReservas";
+import CardsReservas from "../../components/CardsReservas";
+import CardsUsuarios from "../../components/CardsUsuarios";
 import style from "./Administrador.module.css"
 
 const Admin = () =>{
@@ -16,13 +16,17 @@ const Admin = () =>{
             <div className={style.cards}>
                 <CardsUsuarios/>
             </div>
-
-            <div className={style.tabla}>
-                <TablaReservas/>
+            
+            <div className={`${style.componente} ${style.reservaciones}`}>
+                <div className={style.tabla}>
+                    <TablaReservas/>
+                </div>
             </div>
             
-            <div className={style.tabla}>
+            <div className={style.componente}>
+                <div className={style.tabla}>
                 <TablaUsuarios/>
+                </div>
             </div>
         </>
     )

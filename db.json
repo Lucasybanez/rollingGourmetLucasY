@@ -1,0 +1,284 @@
+{
+  "Reservas": [
+    {
+      "id": "2",
+      "Fecha": "08/10/2023",
+      "CantidadDePersonas": "4",
+      "Hora": "18:30"
+    },
+    {
+      "id": "3",
+      "Fecha": "15/8/2023",
+      "CantidadDePersonas": "3",
+      "Hora": "20:00"
+    },
+    {
+      "id": "4",
+      "Fecha": "20/8/2023",
+      "CantidadDePersonas": "6",
+      "Hora": "19:45"
+    },
+    {
+      "id": "5",
+      "Fecha": "25/8/2023",
+      "CantidadDePersonas": "2",
+      "Hora": "14:15"
+    },
+    {
+      "id": "6",
+      "Fecha": "2/9/2023",
+      "CantidadDePersonas": "5",
+      "Hora": "17:30"
+    },
+    {
+      "id": "7",
+      "Fecha": "1/8/2023",
+      "CantidadDePersonas": "2",
+      "Hora": "15:01"
+    },
+    {
+      "id": "8",
+      "Fecha": "12/8/2023",
+      "CantidadDePersonas": "4",
+      "Hora": "18:30"
+    },
+    {
+      "id": "9",
+      "Fecha": "15/8/2023",
+      "CantidadDePersonas": "3",
+      "Hora": "20:00"
+    },
+    {
+      "id": "10",
+      "Fecha": "20/8/2023",
+      "CantidadDePersonas": "6",
+      "Hora": "19:45"
+    },
+    {
+      "id": "11",
+      "Fecha": "25/8/2023",
+      "CantidadDePersonas": "2",
+      "Hora": "14:15"
+    },
+    {
+      "id": "12",
+      "Fecha": "2/9/2023",
+      "CantidadDePersonas": "5",
+      "Hora": "17:30"
+    },
+    {
+      "id": "13",
+      "Fecha": "1/8/2023",
+      "CantidadDePersonas": "2",
+      "Hora": "15:01"
+    },
+    {
+      "id": "14",
+      "Fecha": "12/8/2023",
+      "CantidadDePersonas": "4",
+      "Hora": "18:30"
+    },
+    {
+      "id": "15",
+      "Fecha": "15/8/2023",
+      "CantidadDePersonas": "3",
+      "Hora": "20:00"
+    },
+    {
+      "id": "16",
+      "Fecha": "20/8/2023",
+      "CantidadDePersonas": "6",
+      "Hora": "19:45"
+    },
+    {
+      "id": "17",
+      "Fecha": "25/8/2023",
+      "CantidadDePersonas": "2",
+      "Hora": "14:15"
+    },
+    {
+      "id": "18",
+      "Fecha": "2/9/2023",
+      "CantidadDePersonas": "5",
+      "Hora": "17:30"
+    },
+    {
+      "id": "19",
+      "Fecha": "1/8/2023",
+      "CantidadDePersonas": "2",
+      "Hora": "15:01"
+    },
+    {
+      "id": "20",
+      "Fecha": "12/8/2023",
+      "CantidadDePersonas": "4",
+      "Hora": "18:30"
+    },
+    {
+      "id": "21",
+      "Fecha": "15/8/2023",
+      "CantidadDePersonas": "3",
+      "Hora": "20:00"
+    },
+    {
+      "id": "22",
+      "Fecha": "20/8/2023",
+      "CantidadDePersonas": "6",
+      "Hora": "19:45"
+    },
+    {
+      "id": "23",
+      "Fecha": "25/8/2023",
+      "CantidadDePersonas": "2",
+      "Hora": "14:15"
+    },
+    {
+      "id": "24",
+      "Fecha": "2/9/2023",
+      "CantidadDePersonas": "5",
+      "Hora": "17:30"
+    }
+  ],
+  "Usuarios": [
+    {
+      "id": "1",
+      "Nombre": "Lucas Ybañez",
+      "Email": "lucas@lucas.com",
+      "Contrasena": "1234",
+      "Rol": "Administrador"
+    },
+    {
+      "id": "2",
+      "Nombre": "María Rodríguez",
+      "Email": "maria@email.com",
+      "Contrasena": "abcd"
+    },
+    {
+      "id": "3",
+      "Nombre": "Juan Pérez",
+      "Email": "juan@email.com",
+      "Contrasena": "5678"
+    },
+    {
+      "id": "4",
+      "Nombre": "Pepe Dominguero",
+      "Email": "pepeeee@pepe.com",
+      "Contrasena": "123456789Abc"
+    },
+    {
+      "id": "5",
+      "Nombre": "Ana Gómezz",
+      "Email": "ana@email.com",
+      "Contrasena": "password123",
+      "Rol": "usuario"
+    },
+    {
+      "id": "6",
+      "Nombre": "Eva Fernández",
+      "Email": "eva@email.com",
+      "Contrasena": "eva123"
+    },
+    {
+      "id": "7",
+      "Nombre": "Lucas Ybañez",
+      "Email": "lucas@lucas.com",
+      "Contrasena": "1234"
+    },
+    {
+      "id": "8",
+      "Nombre": "María Rodríguez",
+      "Email": "maria@email.com",
+      "Contrasena": "abcd"
+    },
+    {
+      "id": "10",
+      "Nombre": "Pepe Dominguero",
+      "Email": "pepeeee@pepe.com",
+      "Contrasena": "123456789Abc"
+    },
+    {
+      "id": "11",
+      "Nombre": "Ana Gómez",
+      "Email": "ana@email.com",
+      "Contrasena": "password123"
+    },
+    {
+      "id": "12",
+      "Nombre": "Eva Fernández",
+      "Email": "eva@email.com",
+      "Contrasena": "eva123"
+    },
+    {
+      "id": "13",
+      "Nombre": "Lucas Ybañez",
+      "Email": "lucas@lucas.com",
+      "Contrasena": "1234"
+    },
+    {
+      "id": "14",
+      "Nombre": "María Rodríguez",
+      "Email": "maria@email.com",
+      "Contrasena": "abcd"
+    },
+    {
+      "id": "15",
+      "Nombre": "Juan Pérez",
+      "Email": "juan@email.com",
+      "Contrasena": "5678"
+    },
+    {
+      "id": "16",
+      "Nombre": "Pepe Dominguero",
+      "Email": "pepeeee@pepe.com",
+      "Contrasena": "123456789Abc"
+    },
+    {
+      "id": "17",
+      "Nombre": "Ana Gómez",
+      "Email": "ana@email.com",
+      "Contrasena": "password123"
+    },
+    {
+      "id": "18",
+      "Nombre": "Eva Fernández",
+      "Email": "eva@email.com",
+      "Contrasena": "eva123"
+    },
+    {
+      "id": "19",
+      "Nombre": "Lucas Ybañez",
+      "Email": "lucas@lucas.com",
+      "Contrasena": "1234"
+    },
+    {
+      "id": "20",
+      "Nombre": "María Rodríguez",
+      "Email": "maria@email.com",
+      "Contrasena": "abcd"
+    },
+    {
+      "id": "21",
+      "Nombre": "Juan Pérez",
+      "Email": "juan@email.com",
+      "Contrasena": "5678"
+    },
+    {
+      "id": "22",
+      "Nombre": "Pepe Dominguero",
+      "Email": "pepeeee@pepe.com",
+      "Contrasena": "123456789Abc"
+    },
+    {
+      "id": "23",
+      "Nombre": "Ana Gómez",
+      "Email": "ana@email.com",
+      "Contrasena": "password123"
+    },
+    {
+      "id": "24",
+      "Nombre": "Eva Fernández",
+      "Email": "eva@email.com",
+      "Contrasena": "eva123"
+    }
+  ]
+}

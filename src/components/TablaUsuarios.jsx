@@ -23,10 +23,10 @@ const TablaUsuarios = () =>{
             }).catch ((response)=>{
                 switch (response.response.status) {
                     case 404:
-                            alert("Página no encontrada de usuarios");
+                            Swal.fire("Página no encontrada de usuarios");
                         break;
                     case 500:
-                            alert("Sistema caído de usuarios");
+                            Swal.fire("Sistema caído de usuarios");
                         break;
                 }
             })
@@ -67,15 +67,15 @@ const TablaUsuarios = () =>{
           const response = await axios.delete(
             `${URL}/${id}`
           );
-          alert("Eliminado exitoso");
+          Swal.fire("Eliminado exitoso", '', 'success');
           handleClose();
         } catch (error) {
         }
       }
 
     return(
-        <>
-            <p style={{ color: '#F0E5D8' }}>{act}</p>
+        <div className="componente">
+            <p style={{ color: '#B08D59' }}>{act}</p>
             <h2 className="my-3 text-center">Usuarios</h2>
             <input type="text" 
                 value={busqueda}
@@ -174,7 +174,7 @@ const TablaUsuarios = () =>{
                     }}
                 >Anterior</Button>
             </div>
-        </>
+        </div>
     )
 }
 

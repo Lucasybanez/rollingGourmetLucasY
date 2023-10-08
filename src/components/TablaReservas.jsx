@@ -23,10 +23,10 @@ const TablaReservas = () =>{
             }).catch ((response)=>{
                 switch (response.response.status) {
                     case 404:
-                            alert("Página no encontrada de usuarios");
+                            Swal.fire("Página no encontrada de usuarios");
                         break;
                     case 500:
-                            alert("Sistema caído de usuarios");
+                            Swal.fire("Sistema caído de usuarios");
                         break;
                 }
             })
@@ -66,7 +66,7 @@ const TablaReservas = () =>{
           const response = await axios.delete(
             `${URL}/${id}`
           );
-          alert("Eliminado exitoso");
+          Swal.fire("Eliminado exitoso", '', 'success')
           handleClose();
         } catch (error) {
           console.error('Error al actualizar la reservación:', error);
@@ -76,7 +76,7 @@ const TablaReservas = () =>{
     return(
         <>
             <h2 className="my-3 text-center">Reservas</h2>
-            <p style={{ color: '#F0E5D8' }}>{act}</p>
+            <p style={{ color: '#B08D59' }}>{act}</p>
             <input type="text" 
                 value={busqueda}
                 onChange={(ev)=>{
@@ -91,6 +91,8 @@ const TablaReservas = () =>{
                         <th>Fecha</th>
                         <th>Personas</th>
                         <th>Hora</th>
+                        <th>A nombre de</th>
+                        <th>Email</th>
                         <th>Acción</th>
                     </tr>
                 </thead>
@@ -105,6 +107,8 @@ const TablaReservas = () =>{
                                     <td>{reserv.Fecha}</td>
                                     <td>{reserv.CantidadDePersonas}</td>
                                     <td>{reserv.Hora}</td>
+                                    <td>{reserv.Nombre}</td>
+                                    <td>{reserv.Responsable}</td>
                                     <td>
                                         <ModalEditar reserva={reserv} url={URL}/>
                                         <Button className="mx-2" onClick={() => eliminar(reserv.id)}>Eliminar</Button>
@@ -124,6 +128,8 @@ const TablaReservas = () =>{
                                     <td>{reserv.Fecha}</td>
                                     <td>{reserv.CantidadDePersonas}</td>
                                     <td>{reserv.Hora}</td>
+                                    <td>{reserv.Nombre}</td>
+                                    <td>{reserv.Responsable}</td>
                                     <td>
                                         <ModalEditar reserva={reserv} url={URL}/>
                                         <Button className="mx-2" onClick={() => eliminar(reserv.id)}>Eliminar</Button>

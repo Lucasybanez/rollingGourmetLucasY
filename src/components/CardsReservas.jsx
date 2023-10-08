@@ -24,10 +24,10 @@ const CardsReservas = () =>{
             }).catch ((response)=>{
                 switch (response.response.status) {
                     case 404:
-                            alert("Página no encontrada de usuarios");
+                        Swal.fire('Página no encontrada de usuarios');
                         break;
                     case 500:
-                            alert("Sistema caído de usuarios");
+                        Swal.fire("Sistema caído de usuarios");
                         break;
                 }
             })
@@ -65,7 +65,7 @@ const CardsReservas = () =>{
           const response = await axios.delete(
             `${URL}/${id}`
           );
-          alert("Eliminado exitoso");
+          Swal.fire("Eliminado exitoso", '', 'success');
           handleClose();
         } catch (error) {
           console.error('Error al actualizar la reservación:', error);
@@ -87,15 +87,13 @@ const CardsReservas = () =>{
                       busqueda == "" ?
                         reservas10.map((reserv)=>(
                             <Card className="w-100 my-3">
-                            <Card.Img variant="top" src="https://marketing4ecommerce.co/wp-content/uploads/2018/06/Ahora-puedes-hacer-reservaciones-en-restaurantes-desde-Google-Maps-Colombia-compressor-1280x720.jpg" />
                             <Card.Body>
-                              <Card.Title>Reservación</Card.Title>
                             </Card.Body>
                             <ListGroup className="list-group-flush">
-                            <ListGroup.Item>ID: {reserv.id}</ListGroup.Item>
                               <ListGroup.Item>Fecha: {reserv.Fecha}</ListGroup.Item>
                               <ListGroup.Item>Cantidad de personas: {reserv.CantidadDePersonas}</ListGroup.Item>
                               <ListGroup.Item>Hora: {reserv.Hora}</ListGroup.Item>
+                              <ListGroup.Item>A nombre de: {reserv.Responsable}</ListGroup.Item>
                             </ListGroup>
                             <Card.Body>
                             <ModalEditar reserva={reserv} url={URL}/>
@@ -110,13 +108,14 @@ const CardsReservas = () =>{
                               <Card className="w-100 my-3">
                           <Card.Img variant="top" src="https://marketing4ecommerce.co/wp-content/uploads/2018/06/Ahora-puedes-hacer-reservaciones-en-restaurantes-desde-Google-Maps-Colombia-compressor-1280x720.jpg" />
                           <Card.Body>
-                            <Card.Title>Reservación</Card.Title>
+                            <Card.Title>{reserv.Nombre}</Card.Title>
                           </Card.Body>
                           <ListGroup className="list-group-flush">
-                          <ListGroup.Item>ID: {reserv.id}</ListGroup.Item>
                             <ListGroup.Item>Fecha: {reserv.Fecha}</ListGroup.Item>
                             <ListGroup.Item>Cantidad de personas: {reserv.CantidadDePersonas}</ListGroup.Item>
                             <ListGroup.Item>Hora: {reserv.Hora}</ListGroup.Item>
+                            <ListGroup.Item>Hora: {reserv.Hora}</ListGroup.Item>
+                            <ListGroup.Item>A nombre de: {reserv.Responsable}</ListGroup.Item>
                           </ListGroup>
                           <Card.Body>
                           <ModalEditar reserva={reserv} url={URL}/>
