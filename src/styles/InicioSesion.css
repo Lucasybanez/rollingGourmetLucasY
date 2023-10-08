@@ -2,6 +2,8 @@
 
   /* Resolución para Pantallas de Celulares */  
 @media (max-width: 767px) {
+  body{
+  }
     .Carta{
       width: 100% !important;
    }
@@ -12,10 +14,10 @@
     max-width: auto;
    }
    .Carta{
-    padding: 0 !important;
-}
+    padding: 3% !important;
+    }
 .form-control{
-    width: auto ;
+    width: 80% ;
 }
 .contenedorForm{
     display: flex;
@@ -40,7 +42,7 @@ margin-left: 10px;
 display: flex;
 flex-direction: column;
 align-items: center;
-}  
+}
   
 /*Estilo para texto error en login*/
 .text-danger{
@@ -48,20 +50,16 @@ align-items: center;
 }
 
 
-.background-image {
-margin-top: 12vh;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-image: url(../assets/LoginBackground.jpg);
-background-size: cover;
+body {
+margin-top: 20vh;
+background-image: url("public/contactofondo.jpg");
 background-repeat: no-repeat;
-z-index: -1; 
+background-size: cover !important;
 
 } 
 
 .ubicarCarta {
+margin-bottom: 10vh;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -69,15 +67,19 @@ align-items: center;
 
 .Carta {
   
-background-image: url('../assets/LoginBackground2.jpg');
-background-position: bottom center;   
-border-radius: 26px;  
-background-size: cover;
+background-color: rgba(0, 0, 0, 0.941);
 padding: 0 35px;  
 margin-top: 5vh;
 margin-bottom: 5vh;
+color: #B08D59 !important;
+text-align: start;
+
 }
 
+.carta_logo{
+  width: 40%;
+  margin-top: 4%;
+}
 
 
 
@@ -156,7 +158,8 @@ overflow-x: hidden;
 }
 
 .label-color {
-color: #ffffff;
+  color: #B08D59;
+  font-weight: 1000;
 }
 
 .Contenedor-Error{
