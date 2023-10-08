@@ -1,0 +1,135 @@
+#contenedor{
+    min-height: 80vh;
+    position: relative;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.capa{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.info{
+    position: relative;
+    top: 19vh;
+    z-index: 2;
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.info img{
+    width: 20%;
+}
+
+section{
+    width: 65%;
+    margin: 0 auto;
+}
+
+.titulo-custom {
+    color: #B08D59;
+    font-weight: bolder;
+}
+
+.info-custom{
+    display: flex;
+    align-items: center; 
+    width: 100%;
+    margin: 0 auto;
+}
+
+.cartel-customclaro{
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+}
+
+.cartel-customoscuro{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    color: white;
+}
+
+.info-dorado{
+    color: #B08D59;
+    font-weight: bolder;
+}
+
+.info-negra{
+    font-weight: bolder;
+}
+
+.cartel-customoscuro .boton-reserva-custom{
+    background-color:  #F0E5D8;
+    color: black;
+    display: inline-block;
+    border: 8px solid  #F0E5D8;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.cartel-customclaro .boton-reserva-custom{
+    background-color: black;
+    color: white;
+    display: inline-block;
+    border: 8px solid black;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.boton-reserva-custom:hover{
+    background-color: #B08D59;
+    border: 8px solid #B08D59;
+
+}
+
+
+@media (max-width: 1000px ){
+    .cartel-customclaro{
+        margin: 0 auto;
+    }
+    .cartel-customoscuro{
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .info {
+        top: 15vh;
+    }
+    .info img{
+        width: 40%;
+    }
+
+    #contenedor{
+        min-height: 60vh;
+    }
+ }
+
+@media (max-width: 767.98px) { 
+    .info {
+        top: 15vh;
+    }
+    .info img{
+        width: 60%;
+    }
+
+    #contenedor{
+        min-height: 60vh;
+    }
+ }
