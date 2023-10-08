@@ -56,14 +56,33 @@ const Header = () => {
             <Nav.Link as={Link} to="/" className="Nav.Link  m-2 botones">
               {t("inicio")}
             </Nav.Link>
-            <Nav.Link as={Link} to="/acercadenosotros" className=" m-2 botones">
+            <Nav.Link as={Link} to="/nosotros" className=" m-2 botones">
               {t("nosotros")}
             </Nav.Link>
             <Nav.Link as={Link} to="/contacto" className=" m-2 botones">
               {t("contacto")}
             </Nav.Link>
-            <Nav.Link as={Link} to="/reservas" className=" m-2 boton-reserva">
+            <Nav.Link as={Link} to="/reservar" className=" m-2 boton-reserva text-center">
               {t("reserva")}
+            </Nav.Link>
+          </Nav>
+          <Nav
+            style={{ display: "block", position: "relative" }}
+            className="botones-izquierda"
+          >
+          </Nav>
+        </Navbar.Collapse>
+
+        <Navbar.Collapse
+          id="basic-navbar-nav"
+          className="justify-content-center collapse-custom"
+        >
+          <Nav className="ml-auto mb-2 mb-lg-0">
+            <Nav.Link as={Link} to="/registrarse" className="Nav.Link  m-2 botones">
+              {t("REGISTRARSE")}
+            </Nav.Link>
+            <Nav.Link as={Link} to="/login" className=" m-2 botones">
+              {t("INICIAR SESIÓN")}
             </Nav.Link>
           </Nav>
           <Nav

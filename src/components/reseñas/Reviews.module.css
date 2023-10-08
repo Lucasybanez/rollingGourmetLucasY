@@ -1,3 +1,9 @@
+.componente{
+    background-color: black;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+}
 .cuerpo {
     display: flex;
     justify-content: center;
@@ -71,6 +77,7 @@
     text-align: center;
     color: #B08D59!important;
     font-size: xx-large!important;
+
 }
 
 @media (max-width: 390px) {
@@ -82,12 +89,13 @@
     }
 }
 
-.nombre-cocinero{
+.nombre_cocinero{
+    margin-top: 10px;
     font-size: medium!important;
     color: black;
 }
 
-.texto-reseña{
+.texto_reseña{
     font-size: medium;
     margin-top: 10px;
 }

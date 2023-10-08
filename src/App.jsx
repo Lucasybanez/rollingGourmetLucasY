@@ -8,6 +8,7 @@ import UserContext from "./context/UserContext";
 import "./i18n";
 import { NavbarContext, NavbarContexto } from "./context/NavbarContext.jsx";
 import PaginaPrincipal from "./pages/PaginaPrincipal/PaginaPrincipal"
+import Rutas from './Router/Router';
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
       <NavbarContexto>
         <UserContext>
            <Header/> 
-            <PaginaPrincipal/>
+            <Rutas/>
            <Footer/>
         </UserContext>
       </NavbarContexto>
