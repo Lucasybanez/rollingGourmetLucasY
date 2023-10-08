@@ -33,7 +33,7 @@ const FormReserva = () =>{
       const formik = useFormik({
         initialValues: {
           fecha: "",
-          cantPersonas: 0,
+          cantPersonas: 1,
           hora: ""
         },
         validationSchema: SingUpSchema,
@@ -41,6 +41,45 @@ const FormReserva = () =>{
         validateOnBlur: true,
         onSubmit: (values) => {
           try{
+
+                // consultar
+
+                const consultar = async () =>{
+                    console.log(fecha," ",hora);
+                    const response = await axios.get(url, {params: {Fecha: fecha, Hora: hora}})
+                    .then(response => {
+                        if(response.data.length<2){
+                            guardar();
+                        } else {
+                            Swal.fire(
+                                "No hay turnos disponibles en ese horario, elija otro",
+                                " ",
+                                "warning"
+                              );
+                        }
+                    }).catch(error=>{
+                    });
+                }
+
+                // función desea guardar
+
+                const guardar= () =>{
+                    Swal.fire({
+                        title: 'Hay turnos diponibles, ¿Desea realizar la reserva?',
+                        showDenyButton: true,
+                        showCancelButton: true,
+                        confirmButtonText: 'Reservar',
+                        denyButtonText: `Cancelar`,
+                    }).then((result) => {
+                        /* Read more about isConfirmed, isDenied below */
+                        if (result.isConfirmed) {
+                        crear();
+                        } else if (result.isDenied) {
+                        Swal.fire('Reserva no guardada', '', 'info')
+                        }
+                    })
+                }
+
             const crear = async () => {
                 const Reserva = {
                     Fecha: fecha,
@@ -63,7 +102,9 @@ const FormReserva = () =>{
                 })
                 //Agregar funcion para redirigirte a inicio
               }  
-            crear();      
+
+            consultar(); 
+
             } catch (error) {
               console.log(error);
             }
@@ -71,14 +112,15 @@ const FormReserva = () =>{
 
       });
       
-    
+
 
     return(
         <div className='contenedor'>
             <h1>Crear reserva</h1>
             <Form onSubmit={formik.handleSubmit} noValidate>
-            <Form.Group>
+            <Form.Group className='mt-4 contendor_inputs'>
               <Form.Label className='mx-1'>Fecha:</Form.Label>
+              <br />
               <DatePicker
                 name="fecha"
                 id="fecha"
@@ -95,36 +137,43 @@ const FormReserva = () =>{
               )}
             </Form.Group>
 
-            <Form.Group>
+            <Form.Group className='mt-4 contendor_inputs'>
               <Form.Label>Hora</Form.Label>
-              <Form.Control
-                type="text"
-                name="hora"
-                id="hora"
-                {...formik.getFieldProps("hora")}
+              <Form.Select aria-label="Default select example"
+                              name="hora"
+                              id="hora"
+                              {...formik.getFieldProps("hora")}
+                              onChange={(ev) => {
+                                formik.handleChange(ev);
+                                setHora(ev.target.value);
+                              }}
+                              className={clsx(
+                                'form-control',
+                                {
+                                  'is-invalid': formik.touched.hora && formik.errors.hora,
+                                },
+                                {
+                                  'is-valid': formik.touched.hora && !formik.errors.hora,
+                                }
+                              )}
+              >
 
-                onChange={(ev) => {
-                  formik.handleChange(ev);
-                  setHora(ev.target.value);
-                }}
-                className={clsx(
-                  'form-control',
-                  {
-                    'is-invalid': formik.touched.hora && formik.errors.hora,
-                  },
-                  {
-                    'is-valid': formik.touched.hora && !formik.errors.hora,
-                  }
-                )}
-              />
-              {formik.touched.hora && formik.errors.hora && (
+                <option value="">Selecciona un horario</option>
+                <option value="12:00">12:00</option>
+                <option value="14:00">14:00</option>
+                <option value="16:00">16:00</option>
+                <option value="18:00">18:00</option>
+                <option value="20:00">20:00</option>
+                <option value="22:00">22:00</option>
+                {formik.touched.hora && formik.errors.hora && (
                 <div className="text-danger mt-1">
                   <span role="alert">{formik.errors.hora}</span>
                 </div>
               )}
+                </Form.Select>
             </Form.Group>
 
-                <Form.Group>
+            <Form.Group className='mt-4 contendor_inputs'>
               <Form.Label>Cantidad de Personas</Form.Label>
               <Form.Control
                 type="number"
@@ -133,8 +182,16 @@ const FormReserva = () =>{
 
                 {...formik.getFieldProps("cantPersonas")}
                 onChange={(ev) => {
-                  formik.handleChange(ev);
-                  setCantPersonas(ev.target.value);
+                    if(ev.target.value<=0 || ev.target.value>6){
+                        Swal.fire(
+                            "Las reservas deben ser de mínimo 1 persona y máximo 6",
+                            " ",
+                            "warning"
+                          );
+                    } else {
+                        formik.handleChange(ev);
+                        setCantPersonas(ev.target.value);
+                    }
                 }}
 
                 className={clsx(
@@ -154,8 +211,8 @@ const FormReserva = () =>{
               )}
             </Form.Group>
 
-                <Button variant="primary" type="submit">
-                    Submit
+                <Button variant="primary" type="submit" className='mt-5 contenedor_inputs'>
+                    Consultar disponibilidad
                 </Button>
             </Form>
         </div>

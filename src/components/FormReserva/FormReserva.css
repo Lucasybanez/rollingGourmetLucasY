@@ -1,6 +1,20 @@
 .contenedor{
     background-color: black;
     color: #b08d59;
-    padding: 2%;
+    padding: 5%;
     height: 100%;
+    text-align: center;
+}
+
+.contendor_inputs{
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+@media (max-width: 643px){
+    .contendor_inputs{
+        text-align: center;
+        width: 100%;
+    }
 }
