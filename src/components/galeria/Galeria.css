@@ -10,6 +10,11 @@
     color: #B08D59;
 }
 
+
+.modal{
+    color: black !important;
+}
+
 .grid-item{
     display: flex;
     align-items: center;
@@ -61,7 +66,7 @@
     }
 }
 
-.modal {
+.modalGaleria {
     position: fixed;
     top: 0;
     left: 0;
@@ -73,7 +78,7 @@
     z-index: 999;
   }
   
-  .modal-content {
+  .modalGaleria-content {
     max-width: 60%;
     max-height: 60%;
     position: relative;
@@ -96,7 +101,7 @@
   }
 
   @media (max-width: 1000px){
-    .modal-content{
+    .modalGaleria-content{
         max-width: none;
         margin-top: 100px !important;
     }
