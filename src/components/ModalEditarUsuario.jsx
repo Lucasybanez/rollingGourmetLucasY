@@ -7,6 +7,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import clsx from 'clsx';
 import Swal from 'sweetalert2'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 function ModalEditarUsuario(props) {
@@ -85,6 +86,7 @@ function ModalEditarUsuario(props) {
   });
 
   return (
+    
     <>
       <Button variant="primary" onClick={handleShow}>
         Editar

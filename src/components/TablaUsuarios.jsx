@@ -20,6 +20,7 @@ const TablaUsuarios = () =>{
         const getUsuarios = async () =>{
             const respuesta = await axios.get(URL).then((res)=>{
                 setUsuarios(res.data);
+                console.log(res.data)
             }).catch ((response)=>{
                 switch (response.response.status) {
                     case 404:
@@ -91,7 +92,6 @@ const TablaUsuarios = () =>{
                         <th>id</th>
                         <th>Nombre</th>
                         <th>Email</th>
-                        <th>Contraseña</th>
                         <th>Rol</th>
                         <th>Acción</th>
                     </tr>
@@ -101,13 +101,12 @@ const TablaUsuarios = () =>{
                     {
                         busqueda == "" ? 
                         usuarios10.map((user)=>{
-                            if (user.id >= 0){
+                            if (user.id != 0){
                                 return(
                                     <tr>
-                                    <td>{user.id}</td>
+                                    <td>{user._id}</td>
                                     <td>{user.Nombre}</td>
                                     <td>{user.Email}</td>
-                                    <td>{user.Contrasena}</td>
                                     <td>{user.Rol}</td>
                                     <td>
                                         <ModalEditarUsuario usuario={user} url={URL}/>

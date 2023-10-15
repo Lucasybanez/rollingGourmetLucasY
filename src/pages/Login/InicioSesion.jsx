@@ -9,6 +9,7 @@ import * as Yup from "yup";
 import clsx from "clsx";
 import Swal from "sweetalert2";
 import axios from "axios";
+import ModalEditarUsuario from "../../components/ModalEditarUsuario";
 
 function InicioSesion() {
 
@@ -43,31 +44,25 @@ function InicioSesion() {
       try {
         // Guardo los valores de los inputs
         const usuarioLogueado = {
-          email: values.email,
-          contrasenia: values.contrasenia,
+          Email: values.email,
+          Contrasena: values.contrasenia,
         };
-        console.log("email", usuarioLogueado.email);
-        console.log("contra", usuarioLogueado.contrasenia)
         const iniciarSesion = async () => {
-          const response = await axios.get(url, {params: {Email: usuarioLogueado.email, Contrasena: usuarioLogueado.contrasenia}})
+          //const response = await axios.post(`${url}/login`, {params: {Email: usuarioLogueado.email, Contrasena: usuarioLogueado.contrasenia}})
+          const response = await axios.post(`${url}/login`, usuarioLogueado)
           .then(response=>{
-            console.log(response.data)
-            if(response.data.length>0){
               Swal.fire(
                 "Usuario logueado con exito",
                 "Tus datos ya fueron ingresados exitosamente",
                 "success"
               );
-              setIsLoogedIn(true);
-            }
-            else{
-            Swal.fire("Usuario no encontrado", " ", "warning");
-            }
+              setIsLoggedIn(true);
+          
           }).catch(error=>{
-            console.log(response.data);
+            console.log(error)
             Swal.fire("Usuario no encontrado", " ", "warning");
             setUsuarioLogueadoError(true);
-            console.error(error.response); // Muestra los detalles del error en la consola
+            console.error(error); // Muestra los detalles del error en la consola
           })
         }
         
@@ -174,7 +169,7 @@ function InicioSesion() {
             <ButtonDefault namebtn="ingresar" TipoBoton="sumbit" />
           </Form>
           <br />
-
+          <ModalEditarUsuario usuario="" url={URL}/>
           {/* Botón link 'olvidaste tu contrasenia' */}
            <div className="mb-3 text-center">
             <ButtonDefault
