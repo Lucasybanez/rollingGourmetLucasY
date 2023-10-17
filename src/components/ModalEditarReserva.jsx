@@ -6,7 +6,6 @@ import axios from 'axios';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from 'sweetalert2'
-
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import clsx from 'clsx';
@@ -20,30 +19,31 @@ function ModalEditar(props) {
   const [fecha, setFecha] = useState(props.reserva.Fecha);
   const [cantPersonas, setCantPersonas] = useState(props.reserva.CantidadDePersonas);
   const [hora, setHora] = useState(props.reserva.Hora);
+  const [responsable, setResponsable] = useState(props.reserva.Responsable)
 
   const [busqueda, setBusqueda] = useState("");
 
   const reservaActualizada = {
-    id: props.reserva.id,
     Fecha: fecha,
     CantidadDePersonas: cantPersonas,
     Hora: hora,
+    Responsable: responsable
   };
 
   const actualizar = async () => {
     try {
       const response = await axios.put(
-        `${props.url}/${props.reserva.id}`,
-        reservaActualizada
+        `${props.url}/${props.reserva._id}`,reservaActualizada
       );
       Swal.fire(
         'Guardado!',
         'Los cambios han sido guardados!',
         'success'
-      )
+      );
       handleClose();
     } catch (error) {
-      cSwal.fire({
+      console.log(error)
+      Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'No se pudieron realizar los cambios'

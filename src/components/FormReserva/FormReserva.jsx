@@ -84,7 +84,8 @@ const FormReserva = () =>{
                 const Reserva = {
                     Fecha: fecha,
                     CantidadDePersonas: cantPersonas,
-                    Hora: hora
+                    Hora: hora,
+                    Responsable: "lucas@lucas.com"
                 };
                 const response = await axios.post(url, Reserva)
                 .then(()=>{

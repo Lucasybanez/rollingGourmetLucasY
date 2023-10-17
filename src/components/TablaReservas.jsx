@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios";
 import { Table, Button, Alert } from "react-bootstrap";
 import ModalEditar from "./ModalEditarReserva";
+import BotonEliminar from "./BotonEliminar";
 
 const TablaReservas = () =>{
     const [reservas, setReservas] = useState([]);
@@ -19,7 +20,6 @@ const TablaReservas = () =>{
         const getReservas = async () =>{
             const respuesta = await axios.get(URL).then((res)=>{
                 setReservas(res.data);
-                
             }).catch ((response)=>{
                 switch (response.response.status) {
                     case 404:
@@ -91,7 +91,6 @@ const TablaReservas = () =>{
                         <th>Fecha</th>
                         <th>Personas</th>
                         <th>Hora</th>
-                        <th>A nombre de</th>
                         <th>Email</th>
                         <th>Acción</th>
                     </tr>
@@ -100,18 +99,17 @@ const TablaReservas = () =>{
                 <tbody>
                     {
                     busqueda == "" ?
-                    reservas10.map((reserv) => {
-                        if (reserv.id >=0) {
+                    reservas.map((reserv) => {
+                        if (reserv.id!='') {
                             return (
                                 <tr key={reserv.id}>
                                     <td>{reserv.Fecha}</td>
                                     <td>{reserv.CantidadDePersonas}</td>
                                     <td>{reserv.Hora}</td>
-                                    <td>{reserv.Nombre}</td>
                                     <td>{reserv.Responsable}</td>
                                     <td>
                                         <ModalEditar reserva={reserv} url={URL}/>
-                                        <Button className="mx-2" onClick={() => eliminar(reserv.id)}>Eliminar</Button>
+                                        <BotonEliminar url={URL} id={reserv._id}/>
                                     </td>
                                 </tr>
                             );
@@ -122,17 +120,16 @@ const TablaReservas = () =>{
                     })
                     : 
                     reservas.map((reserv) => {
-                        if (reserv.id >=0 && busqueda==reserv.Fecha) {
+                        if (busqueda==reserv.Fecha) {
                             return (
                                 <tr>
                                     <td>{reserv.Fecha}</td>
                                     <td>{reserv.CantidadDePersonas}</td>
                                     <td>{reserv.Hora}</td>
-                                    <td>{reserv.Nombre}</td>
                                     <td>{reserv.Responsable}</td>
                                     <td>
                                         <ModalEditar reserva={reserv} url={URL}/>
-                                        <Button className="mx-2" onClick={() => eliminar(reserv.id)}>Eliminar</Button>
+                                        <BotonEliminar url={URL} id={reserv._id}/>
                                     </td>
                                 </tr>
                             );
@@ -145,35 +142,7 @@ const TablaReservas = () =>{
                 </tbody>
 
             </Table>
-            <div>
-                <p>Página: {pagina}</p>
-                <Button
-                    onClick={()=>{
-                        if(habBoton==true){
-                            if(conteo+10 >= reservas.length){
-                                setHabBoton(false);
-                            } else {
-
-                                setPagina(pagina+1);
-                                setConteo(conteo+10);
-                                setAct(act+1)
-                            }
-                        }
-                    }}
-                >Siguiente página</Button>
-                <Button className="mx-2"
-                    onClick={()=>{
-                        if(pagina!=1){
-                            setPagina(pagina-1);
-                            setConteo(conteo-10);
-                            if (habBoton==false){
-                                setHabBoton(true);
-                            }
-                        }
-                        setAct(act+1)
-                    }}
-                >Anterior</Button>
-            </div>
+            
         </>
     )
 }

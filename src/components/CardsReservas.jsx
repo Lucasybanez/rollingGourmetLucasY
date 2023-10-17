@@ -3,6 +3,7 @@ import axios from "axios";
 import { Table, Button } from "react-bootstrap";
 import ModalEditar from "./ModalEditarReserva";
 import Card from 'react-bootstrap/Card';
+import BotonEliminar from "./BotonEliminar";
 import ListGroup from 'react-bootstrap/ListGroup';
 
 const CardsReservas = () =>{
@@ -85,7 +86,7 @@ const CardsReservas = () =>{
             />
                     {
                       busqueda == "" ?
-                        reservas10.map((reserv)=>(
+                        reservas.map((reserv)=>(
                             <Card className="w-100 my-3">
                             <Card.Body>
                             </Card.Body>
@@ -97,13 +98,13 @@ const CardsReservas = () =>{
                             </ListGroup>
                             <Card.Body>
                             <ModalEditar reserva={reserv} url={URL}/>
-                            <Button className="mx-2" onClick={() => eliminar(reserv.id)}>Eliminar</Button>
+                            <BotonEliminar url={URL} id={reserv._id}/>
                             </Card.Body>
                           </Card>
                         ))
                         :
                         reservas.map((reserv)=>{
-                          if(reserv.id >=0 && busqueda==reserv.Fecha){
+                          if(busqueda==reserv.Fecha){
                             return(
                               <Card className="w-100 my-3">
                           <Card.Img variant="top" src="https://marketing4ecommerce.co/wp-content/uploads/2018/06/Ahora-puedes-hacer-reservaciones-en-restaurantes-desde-Google-Maps-Colombia-compressor-1280x720.jpg" />
@@ -114,12 +115,11 @@ const CardsReservas = () =>{
                             <ListGroup.Item>Fecha: {reserv.Fecha}</ListGroup.Item>
                             <ListGroup.Item>Cantidad de personas: {reserv.CantidadDePersonas}</ListGroup.Item>
                             <ListGroup.Item>Hora: {reserv.Hora}</ListGroup.Item>
-                            <ListGroup.Item>Hora: {reserv.Hora}</ListGroup.Item>
                             <ListGroup.Item>A nombre de: {reserv.Responsable}</ListGroup.Item>
                           </ListGroup>
                           <Card.Body>
                           <ModalEditar reserva={reserv} url={URL}/>
-                          <Button className="mx-2" onClick={() => eliminar(reserv.id)}>Eliminar</Button>
+                          <BotonEliminar url={URL} id={reserv._id}/>
                           </Card.Body>
                         </Card>
                             );

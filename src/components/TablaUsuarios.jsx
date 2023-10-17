@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios";
 import { Table, Button } from "react-bootstrap";
 import ModalEditarUsuario from "./ModalEditarUsuario";
+import BotonEliminar from "./BotonEliminar";
 
 const TablaUsuarios = () =>{
     const [usuarios, setUsuarios] = useState([]);
@@ -37,7 +38,6 @@ const TablaUsuarios = () =>{
 
     useEffect(()=>{
         cargarPagina();
-        
     });
 
     const cargarPagina = () => {
@@ -59,21 +59,6 @@ const TablaUsuarios = () =>{
         
     }
 
-    // Elimina la reserva
-
-    const eliminar = async (id)=>{
-
-    
-        try {
-          const response = await axios.delete(
-            `${URL}/${id}`
-          );
-          Swal.fire("Eliminado exitoso", '', 'success');
-          handleClose();
-        } catch (error) {
-        }
-      }
-
     return(
         <div className="componente">
             <p style={{ color: '#B08D59' }}>{act}</p>
@@ -83,7 +68,7 @@ const TablaUsuarios = () =>{
                 onChange={(ev)=>{
                     setBusqueda(ev.target.value);
                 }}
-                placeholder="Buscar por Nombre, Email o ID"
+                placeholder="Buscar por Nombre o Email"
                 className="my-2"
             />
             <Table>
@@ -100,7 +85,7 @@ const TablaUsuarios = () =>{
                 <tbody>
                     {
                         busqueda == "" ? 
-                        usuarios10.map((user)=>{
+                        usuarios.map((user)=>{
                             if (user.id != 0){
                                 return(
                                     <tr>
@@ -110,7 +95,7 @@ const TablaUsuarios = () =>{
                                     <td>{user.Rol}</td>
                                     <td>
                                         <ModalEditarUsuario usuario={user} url={URL}/>
-                                        <Button onClick={() => eliminar(user.id)} className="mx-2">Eliminar</Button>
+                                        <BotonEliminar url={URL} id={user._id}/>
                                     </td>
                                 </tr>
                                 );}
@@ -121,17 +106,16 @@ const TablaUsuarios = () =>{
                             
                         }) :
                         usuarios.map((user)=>{
-                            if (user.Nombre == busqueda || user.Email == busqueda || user.id == busqueda){
+                            if (user.Nombre == busqueda || user.Email == busqueda || user._id == busqueda){
                                 return(
                                     <tr>
-                                    <td>{user.id}</td>
+                                    <td>{user._id}</td>
                                     <td>{user.Nombre}</td>
                                     <td>{user.Email}</td>
-                                    <td>{user.Contrasena}</td>
                                     <td>{user.Rol}</td>
                                     <td>
                                         <ModalEditarUsuario usuario={user} url={URL}/>
-                                        <Button onClick={() => eliminar(user.id)} className="mx-2">Eliminar</Button>
+                                        <BotonEliminar url={URL} id={user._id}/>
                                     </td>
                                 </tr>
                                 );
@@ -144,35 +128,7 @@ const TablaUsuarios = () =>{
 
                 </tbody>
             </Table>
-            <div>
-                <p>Página: {pagina}</p>
-                <Button
-                    onClick={()=>{
-                        if(habBoton==true){
-                            if(conteo+10 >= usuarios.length){
-                                setHabBoton(false);
-                            } else {
-
-                                setPagina(pagina+1);
-                                setConteo(conteo+10);
-                                setAct(act+1)
-                            }
-                        }
-                    }}
-                    >Siguiente página</Button>
-                <Button className="mx-2"
-                    onClick={()=>{
-                        if(pagina!=1){
-                            setPagina(pagina-1);
-                            setConteo(conteo-10);
-                            if (habBoton==false){
-                                setHabBoton(true);
-                            }
-                        }
-                        setAct(act+1)
-                    }}
-                >Anterior</Button>
-            </div>
+            
         </div>
     )
 }

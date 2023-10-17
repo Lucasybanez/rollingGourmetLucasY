@@ -4,6 +4,8 @@ import { Table, Button } from "react-bootstrap";
 import ModalEditarUsuario from "./ModalEditarUsuario";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import BotonEliminar from "./BotonEliminar";
+
 
 const CardsUsuarios = () =>{
     const [usuarios, setUsuarios] = useState([]);
@@ -57,21 +59,6 @@ const CardsUsuarios = () =>{
         }
       }
 
-    // Elimina la reserva
-
-    const eliminar = async (id)=>{
-
-    
-        try {
-          const response = await axios.delete(
-            `${URL}/${id}`
-          );
-          Swal.fire("Eliminado exitoso", '', 'success');
-          handleClose();
-        } catch (error) {
-        }
-      }
-
     return(
         <>
             <h1 className="my-3 text-center text-light">Usuarios</h1>
@@ -85,44 +72,41 @@ const CardsUsuarios = () =>{
             />
                     {
                       busqueda == "" ?
-                        usuarios10.map((user)=>(
+                        usuarios.map((user)=>(
                             <>
                                 <Card className="w-100 my-3">
                             <Card.Body>
                               <Card.Title>{user.Rol}</Card.Title>
                             </Card.Body>
                             <ListGroup className="list-group-flush">
-                              <ListGroup.Item>Id: {user.id}</ListGroup.Item>
+                              <ListGroup.Item>Id: {user._id}</ListGroup.Item>
                               <ListGroup.Item>Nombre: {user.Nombre}</ListGroup.Item>
                               <ListGroup.Item>Email: {user.Email}</ListGroup.Item>
-                              <ListGroup.Item>Contraseña: {user.Contrasena}</ListGroup.Item>
                             </ListGroup>
                             <Card.Body>
                                 <ModalEditarUsuario usuario={user} url={URL}/>
-                                        <Button onClick={() => eliminar(user.id)} className="mx-2">Eliminar</Button>
+                                <BotonEliminar url={URL} id={user._id}/>
                             </Card.Body>
                           </Card>
                             </>
                         ))
                         :
                         usuarios.map((user)=>{
-                          if(user.Nombre == busqueda || user.Email == busqueda || user.id == busqueda){
+                          if(user.Nombre == busqueda || user.Email == busqueda || user._id == busqueda){
                             return(
                               <>
                               <Card className="w-100 my-3">
-                          <Card.Img variant="top" src="https://cdn.pixabay.com/photo/2017/07/18/23/23/user-2517433_1280.png" />
                           <Card.Body>
                             <Card.Title>{user.Rol}</Card.Title>
                           </Card.Body>
                           <ListGroup className="list-group-flush">
-                            <ListGroup.Item>Id: {user.id}</ListGroup.Item>
+                            <ListGroup.Item>Id: {user._id}</ListGroup.Item>
                             <ListGroup.Item>Nombre: {user.Nombre}</ListGroup.Item>
                             <ListGroup.Item>Email: {user.Email}</ListGroup.Item>
-                            <ListGroup.Item>Contraseña: {user.Contrasena}</ListGroup.Item>
                           </ListGroup>
                           <Card.Body>
                               <ModalEditarUsuario usuario={user} url={URL}/>
-                                      <Button onClick={() => eliminar(user.id)} className="mx-2">Eliminar</Button>
+                              <BotonEliminar url={URL} id={user._id}/>
                           </Card.Body>
                         </Card>
                           </>

@@ -16,23 +16,23 @@ function ModalEditarUsuario(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [act, setAct] = useState(0)
   const [nombre, setNombre] = useState(props.usuario.Nombre);
   const [email, setEmail] = useState(props.usuario.Email);
-  const [contrasena, setContrasena] = useState(props.usuario.Contrasena);
   const [rol, setRol] = useState(props.usuario.Rol);
 
   const usuarioActualizado = {
     id: props.usuario.id,
     Nombre: nombre,
     Email: email,
-    Contrasena: contrasena,
     Rol: rol,
   };
 
   const actualizar = async () => {
+    setAct(act+1);
     try {
       const response = await axios.put(
-        `${props.url}/${props.usuario.id}`,
+        `${props.url}/${props.usuario._id}`,
         usuarioActualizado
       );
       Swal.fire(
@@ -42,7 +42,7 @@ function ModalEditarUsuario(props) {
       )
       handleClose();
     } catch (error) {
-      cSwal.fire({
+      Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'No se pudieron realizar los cambios'
@@ -60,18 +60,12 @@ function ModalEditarUsuario(props) {
       .email('Ingrese un email válido')
       .required('Debe introducir el email')
       .trim(),
-    contrasena: Yup.string()
-      .required('Debe introducir la contraseña')
-      .min(6, 'La contraseña debe tener al menos 6 caracteres')
-      .max(20, 'La contraseña no debe exceder los 20 caracteres')
-      .trim(),
     rol: Yup.string().required('Debe seleccionar un rol'),
   });
 
   const initialValues = {
     nombre: nombre,
     email: email,
-    contrasena: contrasena,
     rol: rol,
   };
 
@@ -89,7 +83,7 @@ function ModalEditarUsuario(props) {
     
     <>
       <Button variant="primary" onClick={handleShow}>
-        Editar
+        Editar 
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -157,36 +151,7 @@ function ModalEditarUsuario(props) {
               )}
             </Form.Group>
 
-            <Form.Group>
-              <Form.Label>Contraseña</Form.Label>
-              <Form.Control
-                type="password"
-                name="contrasena"
-                id="contrasena"
-
-                {...formik.getFieldProps("contrasena")}
-                onChange={(ev) => {
-                  formik.handleChange(ev);
-                  setContrasena(ev.target.value);
-                }}
-                className={clsx(
-                  'form-control',
-                  {
-                    'is-invalid':
-                      formik.touched.contrasena && formik.errors.contrasena,
-                  },
-                  {
-                    'is-valid':
-                      formik.touched.contrasena && !formik.errors.contrasena,
-                  }
-                )}
-              />
-              {formik.touched.contrasena && formik.errors.contrasena && (
-                <div className="text-danger mt-1">
-                  <span role="alert">{formik.errors.contrasena}</span>
-                </div>
-              )}
-            </Form.Group>
+            
 
             <Form.Group>
               <Form.Label>Rol</Form.Label>
