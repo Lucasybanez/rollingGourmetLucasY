@@ -14,6 +14,7 @@ import axios from "axios";
 function InicioSesion() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const contraseña = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
 
   //Url de un back de prueba para que la funcion de logueo quede guardada para cuando usemos el back
   const url = import.meta.env.VITE_API_USUARIOS;
@@ -23,9 +24,15 @@ function InicioSesion() {
 
   //Esquema de Yup
   const esquemaInicioSesion = Yup.object().shape({
-    email: Yup.string().required("El email es requerido"),
-
-    contrasenia: Yup.string().required("La contrasenia es requerida"),
+    email: Yup.string().required("El email es requerido")
+    .min(16, "Ingrese un email mayor a 16 carácteres")
+    .max(40, "Ingrese un email menor a 40 carácteres"),
+    
+    contrasenia: Yup.string().required("La contrasenia es requerida")
+    .matches(
+      contraseña,
+      "La contraseña debe de contener entre 8 y 16 carácteres, al menos un dígito, al menos una minuscula y al menos una mayuscula"
+    ),
   });
 
   //Valores Iniciales
