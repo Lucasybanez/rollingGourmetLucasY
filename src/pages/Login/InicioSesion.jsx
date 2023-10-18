@@ -83,8 +83,7 @@ function InicioSesion() {
   });
 
   const MandarARegistro = () => {
-    useNavigate("/Registro");
-    console.log("Funciona mandar a registro");
+    useNavigate("/registrarse");
   };
 
   return (
@@ -180,7 +179,7 @@ function InicioSesion() {
             <ButtonDefault
               namebtn="registrarse"
               funcion={MandarARegistro}
-              to={"/registro"}
+              to={"/registrarse"}
             />
           </div>
         </div>

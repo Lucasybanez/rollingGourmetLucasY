@@ -6,7 +6,7 @@ function ButtonDefault({ namebtn, TipoBoton, funcion, to = null }) {
   return (
     <>
       {to ?
-       ( <Link to={"/Registro"} className="lin0k" >
+       ( <Link to={"/registrarse"} className="lin0k" >
           ¿No tienes cuenta? ¡Crea una!
 
         </Link>):(

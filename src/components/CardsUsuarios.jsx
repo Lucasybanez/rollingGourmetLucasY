@@ -117,12 +117,6 @@ const CardsUsuarios = () =>{
                         })
                         
                     }
-                    <Button size="lg"
-                    onClick={()=>{
-                          setConteo(conteo+5);
-                          setAct(act+1)
-                    }}
-                >Ver más</Button>
         </>
     )
 }

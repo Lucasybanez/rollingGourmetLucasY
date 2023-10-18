@@ -123,7 +123,7 @@ section{
 
 @media (max-width: 767.98px) { 
     .info {
-        top: 15vh;
+        top: 30vh;
     }
     .info img{
         width: 60%;
