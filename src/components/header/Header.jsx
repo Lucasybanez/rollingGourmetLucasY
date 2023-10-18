@@ -48,9 +48,14 @@ const Header = () => {
     <>
       <Navbar fixed="top" expand="lg" className={theme}>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse className="w-100 mt-2 collapse-custom text-center">
+        <Nav.Link as={Link} to="/" className="">
+              <img src="https://live.staticflickr.com/65535/53265729792_0da1e0a94e_w.jpg" alt="" />
+            </Nav.Link>
+        </Navbar.Collapse>
         <Navbar.Collapse
           id="basic-navbar-nav"
-          className="justify-content-center collapse-custom"
+          className="justify-content-center collapse-custom w-100"
         >
           <Nav className="ml-auto mb-2 mb-lg-0">
             <Nav.Link as={Link} to="/" className="Nav.Link  m-2 botones">
@@ -75,7 +80,7 @@ const Header = () => {
 
         <Navbar.Collapse
           id="basic-navbar-nav"
-          className="justify-content-center collapse-custom"
+          className="justify-content-center collapse-custom w-100"
         >
           <Nav className="ml-auto mb-2 mb-lg-0">
             <Nav.Link as={Link} to="/registrarse" className="Nav.Link  m-2 botones">

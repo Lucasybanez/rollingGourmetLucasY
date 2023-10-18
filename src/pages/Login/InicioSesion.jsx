@@ -98,7 +98,8 @@ function InicioSesion() {
       <Container className={`${style.ubicarCarta}`}>
         <div className={`${style.Carta} mt-3 mb-3 text-center`}>
           <h3 className="mt-5">¡Bienvenido!</h3>
-          <img src="https://live.staticflickr.com/65535/53266903398_ce1f95ec47_w.jpg" alt="Logo de la pagina" className={`${style.carta_logo} my-5`}/>
+          <img src="https://live.staticflickr.com/65535/53266903398_ce1f95ec47_w.jpg" alt="Logo de la pagina" className={`${style.carta_logo}`}/>
+          <h3>Rolling Gourmet</h3>
           {UsuarioLogueadoError === true && (
             <div className="d-flex justify-content-center">
               <span role="alert" className="text-danger">
