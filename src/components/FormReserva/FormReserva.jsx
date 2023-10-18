@@ -103,7 +103,6 @@ const FormReserva = () =>{
                     Swal.fire({
                         title: 'Hay turnos diponibles, ¿Desea realizar la reserva?',
                         showDenyButton: true,
-                        showCancelButton: true,
                         confirmButtonText: 'Reservar',
                         denyButtonText: `Cancelar`,
                     }).then((result) => {
