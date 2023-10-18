@@ -10,7 +10,7 @@ const NuevaReserva = () =>{
                     <FormReserva/>
                 </Col>
                 <Col lg="4" className="p-0">
-                    <img src="public/ilustracion1.jpg" alt="" className={`${style.contenedor1_img}`}/>
+                    <img src="https://live.staticflickr.com/65535/53267091845_125b22f232_w.jpg" alt="" className={`${style.contenedor1_img}`}/>
                 </Col>
             </Row>
         </div>

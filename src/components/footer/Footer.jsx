@@ -16,7 +16,7 @@ const Footer = () => {
         <Row className="text-center">
           <Col sm={12} lg={3}>
             <img
-              src="public\RollingGourmetIsotipo.png"
+              src="https://live.staticflickr.com/65535/53266903398_ce1f95ec47_w.jpg"
               height="150px"
               width="100%"
               alt=""

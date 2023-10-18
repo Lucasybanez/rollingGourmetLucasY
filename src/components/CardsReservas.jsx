@@ -107,7 +107,6 @@ const CardsReservas = () =>{
                           if(busqueda==reserv.Fecha){
                             return(
                               <Card className="w-100 my-3">
-                          <Card.Img variant="top" src="https://marketing4ecommerce.co/wp-content/uploads/2018/06/Ahora-puedes-hacer-reservaciones-en-restaurantes-desde-Google-Maps-Colombia-compressor-1280x720.jpg" />
                           <Card.Body>
                             <Card.Title>{reserv.Nombre}</Card.Title>
                           </Card.Body>

@@ -97,7 +97,7 @@ function Registro() {
         <div className={`${style.Carta} text-center`}>
           <h3 className="mt-3">¿No tienes cuenta?</h3>
           <h3 className={`${style.label_color}`}>¡Crea una!</h3>
-          <img src="public/RollingGourmetIsotipo sin fondo.png" alt="Logo de la pagina" className={`${style.carta_logo}`} />
+          <img src="https://live.staticflickr.com/65535/53266903398_ce1f95ec47_w.jpg" alt="Logo de la pagina" className={`${style.carta_logo}`} />
           <h3>Rolling Gourmet</h3>
           <div className="section mt-5">
             <Form onSubmit={formik.handleSubmit} noValidate>
@@ -105,7 +105,7 @@ function Registro() {
                 <Form.Label className={`${style.label_color}`}>Nombre</Form.Label>
                 <div className="input-group">
                   <img
-                    src="/src/assets/usuario.png"
+                    src="https://live.staticflickr.com/65535/53267105800_c4ea445a53_w.jpg"
                     alt="Imagen"
                     className={`${style.usuario_icono}`}
                   />
@@ -141,7 +141,7 @@ function Registro() {
                 </Form.Label>
                 <div className="input-group">
                   <img
-                    src="/src/assets/iconoCorreo.png"
+                    src="https://live.staticflickr.com/65535/53267105780_d11cb2a28d_w.jpg"
                     alt="Imagen"
                     className={`${style.correo_icono}`}
                   />
@@ -175,7 +175,7 @@ function Registro() {
                 <Form.Label className={`${style.label_color} mt-4`}>Contraseña </Form.Label>
                 <div className="input-group">
                   <img
-                    src="/src/assets/contraseña.png"
+                    src="https://live.staticflickr.com/65535/53266985859_9f739366a1_w.jpg"
                     alt="Imagen"
                     className={`${style.contraseña_icono}`}
                   />
@@ -211,7 +211,7 @@ function Registro() {
                 </Form.Label>
                 <div className="input-group">
                   <img
-                    src="/src/assets/contraseña.png"
+                    src="https://live.staticflickr.com/65535/53266985859_9f739366a1_w.jpg"
                     alt="Imagen"
                     className={`${style.contraseña_icono}`}
                   />

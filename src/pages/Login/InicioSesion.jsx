@@ -92,7 +92,7 @@ function InicioSesion() {
       <Container className={`${style.ubicarCarta}`}>
         <div className={`${style.Carta} mt-3 mb-3 text-center`}>
           <h3 className="mt-5">¡Bienvenido!</h3>
-          <img src="public/RollingGourmetIsotipo sin fondo.png" alt="Logo de la pagina" className={`${style.carta_logo} my-5`}/>
+          <img src="https://live.staticflickr.com/65535/53266903398_ce1f95ec47_w.jpg" alt="Logo de la pagina" className={`${style.carta_logo} my-5`}/>
           {UsuarioLogueadoError === true && (
             <div className="d-flex justify-content-center">
               <span role="alert" className="text-danger">
@@ -107,7 +107,7 @@ function InicioSesion() {
               </Form.Label>
               <div className="input-group">
                 <img
-                  src="/src/assets/iconoCorreo.png"
+                  src="https://live.staticflickr.com/65535/53267105780_d11cb2a28d_w.jpg"
                   alt="Imagen"
                   className={`${style.correo_icono}`}
                 />
@@ -141,7 +141,7 @@ function InicioSesion() {
               </Form.Label>
               <div className="input-group">
                 <img
-                  src="/src/assets/contraseña.png"
+                  src="https://live.staticflickr.com/65535/53266985859_9f739366a1_w.jpg"
                   alt="Imagen"
                   className={`${style.contraseña_icono}`}
                 />

@@ -16,7 +16,7 @@ const Reviews = () => {
           <div className={`${style.contenedor}`}>
             <div className={`${style.carta}`}>
               <div className={`${style.imgBx}`}>
-              <img src="public\donato2.jpg" height="260px" alt="" />
+              <img src="https://live.staticflickr.com/65535/53266971754_baf6d08264_w.jpg" height="260px" alt="" />
               </div>
               <div className={`${style.content}`}>
                 <h3 className={`${style.nombre_cocinero}`}>Donato De Santis</h3>
@@ -27,7 +27,7 @@ const Reviews = () => {
             </div>
             <div className={`${style.carta}`}>
               <div className={`${style.imgBx}`}>
-                <img src="public\GordonRamsay.jpg" alt="" />
+                <img src="https://live.staticflickr.com/65535/53266971669_0b9a5ce9e8_w.jpg" alt="" />
               </div>
               <div className={`${style.content}`}>
                 <h3 className={`${style.nombre_cocinero}`}>Gordon Ramsay</h3>
@@ -38,7 +38,7 @@ const Reviews = () => {
             </div>
             <div className={`${style.carta}`}>
               <div className={`${style.imgBx}`}>
-                <img src="public\Massimo-Bottura.jpg" alt="" />
+                <img src="https://live.staticflickr.com/65535/53267091730_73c4acd2e1_w.jpg" alt="" />
               </div>
               <div className={`${style.content}`}>
                 <h3 className={`${style.nombre_cocinero}`}>Massimo Bottura</h3>

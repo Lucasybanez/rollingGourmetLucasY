@@ -5,7 +5,7 @@ const Presentacion = () => {
         <>
             <div className={`${style.container} ${style.presentacion_contenedor}`}>
                 <div className="row">
-                <img src="public/ilustracion1.jpg" alt="" className="col-lg-4 col-sm-12 p-2"/>
+                <img src="https://live.staticflickr.com/65535/53267091845_125b22f232_w.jpg" alt="" className="col-lg-4 col-sm-12 p-2"/>
                 <div className="col-lg-8 col-sm-12 p-4">
                     <h3 className={`${style.titulo_custom}`}>ACERCA DE NOSOTROS</h3>
                     <p>

@@ -13,7 +13,7 @@ const ACercaDeNosotros = () => {
       <Container className={`${style.contenedor}`}>
         <Row>
           <Col lg="12">
-            <img src="public/Lucas y.png" alt="" className={`${style.contenedor_foto}`}/>
+            <img src="https://live.staticflickr.com/65535/53266903758_12b8caca61_w.jpg" alt="" className={`${style.contenedor_foto}`}/>
           </Col>
           <Col lg="12">
             <div className={`${style.contenedor_caja2}`}>
