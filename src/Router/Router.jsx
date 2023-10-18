@@ -7,6 +7,7 @@ import Registro from "../pages/Registro/Registro"
 import NuevaReserva from "../pages/NuevaReserva/NuevaReserva"
 import MisReservas from "../pages/Mis Reservas/MisReservas"
 import Admin from "../pages/Administrador/Administrador"
+import Error404 from "../pages/Error404/Error404"
 
 function Rutas() {
   return (
@@ -20,6 +21,7 @@ function Rutas() {
         <Route path="reservar" element={<NuevaReserva/>} />
         <Route path="misreservas" element={<MisReservas/>} />
         <Route path="administrador" element={<Admin/>} />
+        <Route path="*" element={<Error404/>}/>
       </Routes>
     </div>
   )
