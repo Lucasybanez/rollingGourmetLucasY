@@ -12,10 +12,11 @@ const Admin = () =>{
 
     useEffect(()=>{
         // obtener datos de inicio de sesión
-  
         const token = localStorage.getItem("token");
         try{
             const decode = jwt_decode(token);
+            console.log(decode.Rol);
+
             if(decode.Rol != "administrador"){
                 Swal.fire(
                     "Debe ser administrador para acceder",
@@ -25,6 +26,12 @@ const Admin = () =>{
                   window.location.href = "/login";
                 }
         } catch (e){
+            Swal.fire(
+                "Debe ser administrador para acceder",
+                " ",
+                "warning"
+              );
+              window.location.href = "/login";
         }
   },[])
 

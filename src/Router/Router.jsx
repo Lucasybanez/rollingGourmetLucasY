@@ -20,9 +20,6 @@ function Rutas() {
         <Route path="reservar" element={<NuevaReserva/>} />
         <Route path="misreservas" element={<MisReservas/>} />
         <Route path="administrador" element={<Admin/>} />
-
-
-
       </Routes>
     </div>
   )
