@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useTranslation } from "react-i18next";
 
-const Menu = ({theme}) => {
+const Menu = () => {
 
   const { t } = useTranslation(); 
 
@@ -15,7 +15,7 @@ const Menu = ({theme}) => {
   return (
     <>
       <div className="custom-menu">
-        <div className={`contenedor-tabs${theme} mt-4`}>
+        <div className={`contenedor-tabsoscuro mt-4`}>
           <h2 className="text-center mt-4">Menu</h2>
           <Tabs
             defaultActiveKey="Pastas"
@@ -24,29 +24,29 @@ const Menu = ({theme}) => {
           >
             <Tab
               eventKey="Pastas"
-              title={<span className={`tab-title${theme}`}>{t('pastas')}</span>}
+              title={<span className={`tab-titleoscuro`}>{t('pastas')}</span>}
             >
-              <h3 className={`text-center mt-3 color-info${theme}`}>SPAGHETTI ALLA BOLOGNESE</h3>
+              <h3 className={`text-center mt-3 color-infooscuro`}>SPAGHETTI ALLA BOLOGNESE</h3>
               <p className="text-center">
               {t('descripcionSpageti')}
               </p>
               <h4 className="text-center">$1650</h4>
               <hr />
-              <h3 className={`text-center mt-3 color-info${theme}`}>RAVIOLI ALLA CARBONARA</h3>
+              <h3 className={`text-center mt-3 color-infooscuro`}>RAVIOLI ALLA CARBONARA</h3>
               <p className="text-center">
               {t('descripcionRavioles')}
               </p>
               <h4 className="text-center">$1800</h4>
               <p className="text-center">{t('opcionesRavioles')}</p>
               <hr />
-              <h3 className={`text-center mt-3 color-info${theme}`}>CANNELLONI DI POLLO</h3>
+              <h3 className={`text-center mt-3 color-infooscuro`}>CANNELLONI DI POLLO</h3>
               <p className="text-center">
                 {" "}
                 {t('descripcionCanelones')}
               </p>
               <h4 className="text-center">$1900</h4>
               <hr />
-              <h3 className={`text-center mt-3 color-info${theme}`}>LASAGNE DI CARNE</h3>
+              <h3 className={`text-center mt-3 color-infooscuro`}>LASAGNE DI CARNE</h3>
               <p className="text-center">
                 {" "}
                 {t('descripcionLasagna')}
@@ -55,9 +55,9 @@ const Menu = ({theme}) => {
             </Tab>
             <Tab
               eventKey="Pizzas"
-              title={<span className={`tab-title${theme}`}>{t('pizzas')}</span>}
+              title={<span className={`tab-titleoscuro`}>{t('pizzas')}</span>}
             >
-              <h3 className={`text-center mt-3 color-info${theme}`}>MARGHERITA</h3>
+              <h3 className={`text-center mt-3 color-infooscuro`}>MARGHERITA</h3>
               <p className="text-center">
                 {" "}
                 {t('pizza1')}
@@ -65,7 +65,7 @@ const Menu = ({theme}) => {
               <h4 className="text-center">$2200</h4>
               <hr />
 
-              <h3 className={`text-center mt-3 color-info${theme}`}>MARINARA</h3>
+              <h3 className={`text-center mt-3 color-infooscuro`}>MARINARA</h3>
               <p className="text-center">
                 {" "}
                 {t('pizza2')}
@@ -73,7 +73,7 @@ const Menu = ({theme}) => {
               <h4 className="text-center">$1900</h4>
               <hr />
 
-              <h3 className={`text-center mt-3 color-info${theme}`}>QUATTRO FORMAGGI</h3>
+              <h3 className={`text-center mt-3 color-infooscuro`}>QUATTRO FORMAGGI</h3>
               <p className="text-center">
                 {" "}
                 {t('pizza3')}
@@ -81,7 +81,7 @@ const Menu = ({theme}) => {
               <h4 className="text-center">$2500</h4>
               <hr />
 
-              <h3 className={`text-center mt-3 color-info${theme}`}>NAPOLETANA</h3>
+              <h3 className={`text-center mt-3 color-infooscuro`}>NAPOLETANA</h3>
               <p className="text-center">
                 {" "}
                 {t('pizza4')}
@@ -90,7 +90,7 @@ const Menu = ({theme}) => {
             </Tab>
             <Tab
               eventKey="Bebidas"
-              title={<span className={`tab-title${theme}`}>{t('bebidas')}</span>}
+              title={<span className={`tab-titleoscuro`}>{t('bebidas')}</span>}
             >
               <h2 className="text-center">{t('vino')}</h2>
               <Container>
@@ -124,7 +124,7 @@ const Menu = ({theme}) => {
                   </Col>
                 </Row>
               </Container>
-              <h3 className={`text-center mt-3 color-info${theme}`}>{t('gaseosas')}</h3>
+              <h3 className={`text-center mt-3 color-infooscuro`}>{t('gaseosas')}</h3>
               <p className="text-center">350cc</p>
               <p className="text-center">COCA-COLA | FANTA | SPRITE</p>
               <h5 className="text-center">$500</h5>
@@ -132,19 +132,19 @@ const Menu = ({theme}) => {
             </Tab>
             <Tab
               eventKey="Postres"
-              title={<span className={`tab-title${theme}`}>{t('postres')}</span>}
+              title={<span className={`tab-titleoscuro`}>{t('postres')}</span>}
             >
-              <h3 className={`text-center mt-3 color-info${theme}`}>TIRAMISÚ</h3>
+              <h3 className={`text-center mt-3 color-infooscuro`}>TIRAMISÚ</h3>
               <h5 className="text-center">$800</h5>
               <hr />
-              <h3 className={`text-center mt-3 color-info${theme}`}>GELATO</h3>
+              <h3 className={`text-center mt-3 color-infooscuro`}>GELATO</h3>
               <h5 className="text-center">$650</h5>
               <p>{t('opcionesHelado')}</p>
               <hr />
-              <h3 className={`text-center mt-3 color-info${theme}`}>CANNOLI</h3>
+              <h3 className={`text-center mt-3 color-infooscuro`}>CANNOLI</h3>
               <h5 className="text-center">$600</h5>
               <hr />
-              <h3 className={`text-center mt-3 color-info${theme}`}>PANNA COTTA</h3>
+              <h3 className={`text-center mt-3 color-infooscuro`}>PANNA COTTA</h3>
               <h5 className="text-center">$900</h5>
               <hr />
             </Tab>

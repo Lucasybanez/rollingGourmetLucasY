@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../styles/InicioSesion.css";
+import style from "../Login/InicioSesion.module.css";
 import ButtonDefault from "../../components/ButtonDefault";
 import logo from "../../assets/logo.png";
 import { Link, Navigate } from "react-router-dom";
@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 
 function Registro() {
-  const url = import.meta.env.VITE_API;
+  const url = import.meta.env.VITE_API_USUARIOS;
 
   //Expresiones para validar
   const soloLetras = /^[a-zA-Z ]+$/;
@@ -61,48 +61,30 @@ function Registro() {
     validateOnBlur: true,
     onSubmit: (values) => {
       try {
-        //Alert de sweetalert para confirmar
-        Swal.fire({
-          title: "Ingresaste los datos correctamente?",
-          text: "Si revisaste todos los valores, y los ingresaste correctamente sigue adelante",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Si, esta todo bien",
-          cancelButtonText: "No, quiero cambiar algo",
-        }).then(async (result) => {
-          if (result.isConfirmed) {
-            //Guarda los valores del formulario
-            const Usuario = {
-              nombre: values.Nombre,
-              email: values.Email,
-              contrasenia: values.Contraseña,
-            };
-
-            axios
-              .post(`${url}/usuarios`, Usuario)
-              .then((response) => {
-                console.log("Usuario creado con exito");
-                Swal.fire(
-                  "Usuario credo con exito",
-                  "Tus datos ya fueron ingresados exitosamente",
-                  "success"
-                );
-              })
-              .catch((error) => {
-                Swal.fire(
-                  "No se pudo crear el usuario",
-                  " ",
-                  "warning"
-                );
-                console.error(error);
-              });
-
-            console.log(Usuario);
-            //Agregar funcion para redirigirte a inicio
-          }
-        });
+        const crear = async () => {
+          const Usuario = {
+            Nombre: values.Nombre,
+            Email: values.Email,
+            Contrasena: values.Contraseña,
+            Rol: "usuario"
+          };
+          const response = await axios.post(url, Usuario)
+          .then(()=>{
+              Swal.fire(
+                "Usuario credo con exito",
+                "Tus datos ya fueron ingresados exitosamente",
+                "success"
+              );
+          }).catch(()=>{
+            Swal.fire(
+              "No se pudo crear el usuario",
+              " ",
+              "warning"
+            );
+          })
+          //Agregar funcion para redirigirte a inicio
+        }        
+        crear();
       } catch (error) {
         console.log(error);
       }
@@ -110,21 +92,22 @@ function Registro() {
   });
 
   return (
-    <div className="background-image">
-      <Container className="ubicarCarta mt-4 mb-4">
-        <div className="Carta text-center">
-          <h3 className="mt-3">No tienes cuenta?</h3>
-          <h3 className="">Create una!</h3>
-          <img src={logo} alt="Logo de la pagina" className="img-fluid" />
-          <div className="section text-center">
+    <div className={style.page}>
+      <Container className={`${style.ubicarCarta}`}>
+        <div className={`${style.Carta} text-center`}>
+          <h3 className="mt-3">¿No tienes cuenta?</h3>
+          <h3 className={`${style.label_color}`}>¡Crea una!</h3>
+          <img src="public/RollingGourmetIsotipo sin fondo.png" alt="Logo de la pagina" className={`${style.carta_logo}`} />
+          <h3>Rolling Gourmet</h3>
+          <div className="section mt-5">
             <Form onSubmit={formik.handleSubmit} noValidate>
-              <Form.Group className="contenedorForm">
-                <Form.Label className="label-color">Nombre</Form.Label>
+              <Form.Group className={`${style.contenedorForm}`}>
+                <Form.Label className={`${style.label_color}`}>Nombre</Form.Label>
                 <div className="input-group">
                   <img
                     src="/src/assets/usuario.png"
                     alt="Imagen"
-                    className="usuario-icono"
+                    className={`${style.usuario_icono}`}
                   />
                   <Form.Control
                     type="text"
@@ -153,14 +136,14 @@ function Registro() {
                 )}
               </Form.Group>
               <Form.Group className="contenedorForm">
-                <Form.Label className="label-color">
+                <Form.Label className={`${style.label_color} mt-4`}>
                   Correo Electrónico{" "}
                 </Form.Label>
                 <div className="input-group">
                   <img
                     src="/src/assets/iconoCorreo.png"
                     alt="Imagen"
-                    className="correo-icono"
+                    className={`${style.correo_icono}`}
                   />
                   <Form.Control
                     type="text"
@@ -188,13 +171,13 @@ function Registro() {
                   
                 )}
               </Form.Group>
-              <Form.Group className="contenedorForm">
-                <Form.Label className="label-color">Contraseña </Form.Label>
+              <Form.Group className={`${style.contenedorForm}`}>
+                <Form.Label className={`${style.label_color} mt-4`}>Contraseña </Form.Label>
                 <div className="input-group">
                   <img
                     src="/src/assets/contraseña.png"
                     alt="Imagen"
-                    className="contraseña-icono"
+                    className={`${style.contraseña_icono}`}
                   />
                   <Form.Control
                     type="password"
@@ -222,15 +205,15 @@ function Registro() {
                   
                 )}
               </Form.Group>
-              <Form.Group className="contenedorForm">
-                <Form.Label className="label-color">
+              <Form.Group className={`${style.contenedorForm}`}>
+                <Form.Label className={`${style.label_color} mt-4`}>
                   Repite tu contraseña{" "}
                 </Form.Label>
                 <div className="input-group">
                   <img
                     src="/src/assets/contraseña.png"
                     alt="Imagen"
-                    className="contraseña-icono"
+                    className={`${style.contraseña_icono}`}
                   />
                   <Form.Control
                     type="password"
@@ -262,11 +245,11 @@ function Registro() {
                   )}
               </Form.Group>
 
-              <ButtonDefault namebtn="Crear cuenta" />
+              <ButtonDefault namebtn="Crear cuenta"/>
 
               <div className=" text-center mb-3">
                 <Link to={"/Login"} className="link ">
-                  Ya tienes una cuenta? Inicia Sesion!
+                  ¿Ya tienes una cuenta? ¡Inicia Sesion!
                 </Link>
               </div>
             </Form>

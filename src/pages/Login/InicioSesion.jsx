@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../styles/InicioSesion.css";
+import style from "./InicioSesion.module.css";
 import ButtonDefault from "../../components/ButtonDefault";
 import logo from "../../assets/logo.png";
 import { Link, Navigate, useNavigate } from "react-router-dom";
@@ -8,6 +8,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import clsx from "clsx";
 import Swal from "sweetalert2";
+import jwt_decode from "jwt-decode"
 import axios from "axios";
 
 function InicioSesion() {
@@ -15,8 +16,7 @@ function InicioSesion() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   //Url de un back de prueba para que la funcion de logueo quede guardada para cuando usemos el back
-  /* const url = "http://localhost:8001/api/usuarios/login"; */
-  const url = import.meta.env.VITE_API;
+  const url = import.meta.env.VITE_API_USUARIOS;
 
   //UseState para mostrar un mensaje de que los datos ingresados no se encontraron
   const [UsuarioLogueadoError, setUsuarioLogueadoError] = useState(false);
@@ -44,36 +44,40 @@ function InicioSesion() {
       try {
         // Guardo los valores de los inputs
         const usuarioLogueado = {
-          email: values.email,
-          contrasenia: values.contrasenia,
+          Email: values.email,
+          Contrasena: values.contrasenia,
         };
-        console.log(usuarioLogueado);
-        // Hago el pedido con axios
-        const response = await axios.post(`${url}/login`, usuarioLogueado);
-        console.log(response);
-        // Si la petición es exitosa
-        Swal.fire(
-          "Usuario logueado con exito",
-          "Tus datos ya fueron ingresados exitosamente",
-          "success"
-        );
+        const iniciarSesion = async () => {
+          //const response = await axios.post(`${url}/login`, {params: {Email: usuarioLogueado.email, Contrasena: usuarioLogueado.contrasenia}})
+          const response = await axios.post(`${url}/login`, usuarioLogueado)
+          .then(response=>{
+              Swal.fire(
+                "Usuario logueado con exito",
+                "Tus datos ya fueron ingresados exitosamente",
+                "success"
+              );
+              const token = response.data.data.token
+              localStorage.setItem("token",token);
+              const decode = jwt_decode(token);
+              if(decode.Rol == "administrador"){
+                window.location.href = "/administrador";
+              }
+              else {
+                window.location.href = "/reservar";
 
-        // Guardo el token en el estado o en el LocalStorage si es necesario
-        const jwtToken = response.data.data.token;
-        setUsuarioLogueadoError(false); // No olvides manejar el estado de error
-        console.log(jwtToken);
-
-        // Aquí puedes decidir si deseas guardar el token en el estado o en LocalStorage
-        /* setTokenEnEstado(jwtToken); */
-        localStorage.setItem("user", JSON.stringify(jwtToken));
+              }
+          }).catch(error=>{
+            Swal.fire("Datos de inicio de sesión incorrectos", " ", "warning");
+            setUsuarioLogueadoError(true);
+          })
+        }
         
-        setIsLoogedIn(true);
+        iniciarSesion();
       
       } catch (error) {
         // Si la petición falla
-        Swal.fire("No se pudo loguear el usuario", " ", "warning");
-        setUsuarioLogueadoError(true);
-        console.error(error.response); // Muestra los detalles del error en la consola
+        Swal.fire("Algo falló en la autenticación de usuario", " ", "warning");
+
       }
     },
   });
@@ -84,28 +88,28 @@ function InicioSesion() {
   };
 
   return (
-    <div className="background-image">
-      <Container className="ubicarCarta">
-        <div className="Carta mt-3 mb-3 text-center">
-          <h3 className="mt-3">Bienvenido!</h3>
-          <img src={logo} alt="Logo de la pagina" className="img-fluid" />
+    <div className={style.page}>
+      <Container className={`${style.ubicarCarta}`}>
+        <div className={`${style.Carta} mt-3 mb-3 text-center`}>
+          <h3 className="mt-5">¡Bienvenido!</h3>
+          <img src="public/RollingGourmetIsotipo sin fondo.png" alt="Logo de la pagina" className={`${style.carta_logo} my-5`}/>
           {UsuarioLogueadoError === true && (
             <div className="d-flex justify-content-center">
               <span role="alert" className="text-danger">
-                Los datos ingresadon no coinciden con ningun usuario
+                Datos incorrectos
               </span>
             </div>
           )}
-          <Form onSubmit={formik.handleSubmit} noValidate>
-            <Form.Group className="contenedorForm">
-              <Form.Label className="label-color">
+          <Form onSubmit={formik.handleSubmit} noValidate className="">
+            <Form.Group className={`${style.contenedorForm} my-5`}>
+              <Form.Label className={`${style.label_color}`}>
                 Ingresa tu correo electronico{" "}
               </Form.Label>
               <div className="input-group">
                 <img
                   src="/src/assets/iconoCorreo.png"
                   alt="Imagen"
-                  className="correo-icono"
+                  className={`${style.correo_icono}`}
                 />
                 <Form.Control
                   type="text"
@@ -131,15 +135,15 @@ function InicioSesion() {
                 </div>
               )}
             </Form.Group>
-            <Form.Group className="contenedorForm">
-              <Form.Label className="label-color">
+            <Form.Group className={`${style.contenedorForm}`}>
+              <Form.Label className={`${style.label_color}`}>
                 Ingresa tu contrasenia{" "}
               </Form.Label>
               <div className="input-group">
                 <img
                   src="/src/assets/contraseña.png"
                   alt="Imagen"
-                  className="contraseña-icono"
+                  className={`${style.contraseña_icono}`}
                 />
                 <Form.Control
                   type="password"
@@ -169,13 +173,8 @@ function InicioSesion() {
             </Form.Group>
 
             <ButtonDefault namebtn="ingresar" TipoBoton="sumbit" />
-
-            {/* <button className="btn mt-3 mb-3" type="submit">
-              Ingresar
-            </button>  */}
           </Form>
           <br />
-
           {/* Botón link 'olvidaste tu contrasenia' */}
            <div className="mb-3 text-center">
             <ButtonDefault

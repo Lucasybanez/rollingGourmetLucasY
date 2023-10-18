@@ -8,7 +8,7 @@ const UserContext = ({children}) => {
 
     const[usuarios,setUsuarios] = useState([])
 
-  const url = import.meta.env.VITE_API;
+  const url = import.meta.env.VITE_API_USUARIOS;
 
     const  getUsuarios = async () => {
         try {

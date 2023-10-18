@@ -20,7 +20,7 @@ const Galeria = ({theme}) => {
   return (
     <>
     <hr />
-      <div className={`body-galeria${theme} container`}>
+      <div className={`body-galeriaoscuro container`}>
         <h2 className="text-center titulo-galeria">
           <br></br>{t('galeria')}
         </h2>
@@ -111,7 +111,7 @@ const Galeria = ({theme}) => {
           </div>
         </div>
         {imagenSeleccionada && (
-          <div className="modal">
+          <div className="modalGaleria">
             <Button
               className="boton-cerrado"
               variant="light"
@@ -128,7 +128,7 @@ const Galeria = ({theme}) => {
                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
               </svg>
             </Button>
-            <div className="modal-content mt-5">
+            <div className="modalGaleria-content mt-5">
               <img
                 src={imagenSeleccionada}
                 alt=""

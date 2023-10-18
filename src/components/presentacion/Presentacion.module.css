@@ -1,0 +1,25 @@
+.presentacion_contenedor{
+    display: flex;
+    background-color: black;
+    width: 70%;
+    margin: 3% auto;
+    text-align: center;
+}
+
+.presentacion_contenedor_caja2{
+    padding: 10%;
+}
+
+.titulo_custom {
+    color: #B08D59;
+    font-weight: bolder;
+}
+
+.info_dorado{
+    color: #B08D59;
+    font-weight: bolder;
+}
+
+.info_negra{
+    font-weight: bolder;
+}

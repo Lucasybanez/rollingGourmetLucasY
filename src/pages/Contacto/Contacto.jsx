@@ -18,9 +18,6 @@ const Contacto = () =>{
                 </div>
 
                 <div className={style.container2}>
-                    <h4 className={`mx-5 mt-5 text-center ${style.parrafo} ${style.titulo}`}>
-                    {t('contacto')}
-                    </h4>
                     <div className={`p-5 ${style.formContacto}`}>
                         <Formulario/>
                     </div>

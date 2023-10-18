@@ -12,15 +12,15 @@ const Footer = () => {
 
   return (
     <>
-      <Container fluid className={`footer${theme}`}>
+      <Container fluid className={`footeroscuro`}>
         <Row className="text-center">
           <Col sm={12} lg={3}>
             <img
-              src="public\chef-sin-fondo.png"
-              height="200px"
+              src="public\RollingGourmetIsotipo.png"
+              height="150px"
               width="100%"
               alt=""
-              className="img-custom"
+              className="img-custom mt-3"
             />
           </Col>
           <Col sm={12} lg={3} className="mt-3">
