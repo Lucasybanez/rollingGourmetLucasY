@@ -8,8 +8,8 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import clsx from "clsx";
 import Swal from "sweetalert2";
+import jwt_decode from "jwt-decode"
 import axios from "axios";
-import ModalEditarUsuario from "../../components/ModalEditarUsuario";
 
 function InicioSesion() {
 
@@ -56,13 +56,19 @@ function InicioSesion() {
                 "Tus datos ya fueron ingresados exitosamente",
                 "success"
               );
-              setIsLoggedIn(true);
-          
+              const token = response.data.data.token
+              localStorage.setItem("token",token);
+              const decode = jwt_decode(token);
+              if(decode.Rol == "administrador"){
+                window.location.href = "/administrador";
+              }
+              else {
+                window.location.href = "/reservar";
+
+              }
           }).catch(error=>{
-            console.log(error)
-            Swal.fire("Usuario no encontrado", " ", "warning");
+            Swal.fire("Datos de inicio de sesión incorrectos", " ", "warning");
             setUsuarioLogueadoError(true);
-            console.error(error); // Muestra los detalles del error en la consola
           })
         }
         
@@ -90,12 +96,12 @@ function InicioSesion() {
           {UsuarioLogueadoError === true && (
             <div className="d-flex justify-content-center">
               <span role="alert" className="text-danger">
-                Los datos ingresadon no coinciden con ningun usuario
+                Datos incorrectos
               </span>
             </div>
           )}
           <Form onSubmit={formik.handleSubmit} noValidate className="">
-            <Form.Group classNameclassName={`${style.contenedorForm} my-5`}>
+            <Form.Group className={`${style.contenedorForm} my-5`}>
               <Form.Label className={`${style.label_color}`}>
                 Ingresa tu correo electronico{" "}
               </Form.Label>
@@ -169,7 +175,6 @@ function InicioSesion() {
             <ButtonDefault namebtn="ingresar" TipoBoton="sumbit" />
           </Form>
           <br />
-          <ModalEditarUsuario usuario="" url={URL}/>
           {/* Botón link 'olvidaste tu contrasenia' */}
            <div className="mb-3 text-center">
             <ButtonDefault

@@ -5,10 +5,12 @@ import { useFormik } from 'formik';
 import * as Yup from "yup";
 import clsx from "clsx";
 import Swal from "sweetalert2";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
+import jwt_decode from "jwt-decode"
+import { tr } from 'date-fns/locale';
 
 
 const FormReserva = () =>{
@@ -18,6 +20,22 @@ const FormReserva = () =>{
     const [fecha, setFecha] = useState("");
     const [cantPersonas, setCantPersonas] = useState(1);
     const [hora, setHora] = useState("");
+    const [decode, setDecode] = useState("");
+
+    const consulta={
+      Fecha: fecha,
+      Hora: hora
+    }
+
+    useEffect(()=>{
+      // obtener datos de inicio de sesión
+
+      const token = localStorage.getItem("token");
+      try{
+        setDecode(jwt_decode(token));
+      } catch (e){
+      }
+},[])
 
     // ESQUEMA
 
@@ -45,10 +63,16 @@ const FormReserva = () =>{
                 // consultar
 
                 const consultar = async () =>{
-                    console.log(fecha," ",hora);
-                    const response = await axios.get(url, {params: {Fecha: fecha, Hora: hora}})
+                  
+                  const consulta={
+                    Fecha: fecha,
+                    Hora: hora
+                  }
+                  
+                  if(decode.Rol=="usuario" || decode.Rol=="administrador"){
+                    const response = await axios.post(`${url}/ocupadas`, consulta)
                     .then(response => {
-                        if(response.data.length<2){
+                        if(response.data.length <5){
                             guardar();
                         } else {
                             Swal.fire(
@@ -58,7 +82,19 @@ const FormReserva = () =>{
                               );
                         }
                     }).catch(error=>{
+                      Swal.fire(
+                        "Error: no se pudo realizar la reserva",
+                        " ",
+                        "warning"
+                      );
                     });
+                  } else {
+                    Swal.fire(
+                      "Debe iniciar sesión para hacer una reserva",
+                      " ",
+                      "warning"
+                    );
+                  }
                 }
 
                 // función desea guardar
@@ -85,7 +121,7 @@ const FormReserva = () =>{
                     Fecha: fecha,
                     CantidadDePersonas: cantPersonas,
                     Hora: hora,
-                    Responsable: "lucas@lucas.com"
+                    Responsable: decode.Nombre
                 };
                 const response = await axios.post(url, Reserva)
                 .then(()=>{

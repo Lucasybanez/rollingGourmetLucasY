@@ -65,7 +65,8 @@ function Registro() {
           const Usuario = {
             Nombre: values.Nombre,
             Email: values.Email,
-            Contrasena: values.Contraseña
+            Contrasena: values.Contraseña,
+            Rol: "usuario"
           };
           const response = await axios.post(url, Usuario)
           .then(()=>{
