@@ -1,4 +1,4 @@
-# RollingGourmeteBack
+# RollingGourmeteFront
 
 Repositorio del frontend de Rolling Gourmet
 
