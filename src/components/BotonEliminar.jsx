@@ -8,7 +8,6 @@ const BotonEliminar = (props)=>{
 
  const eliminar = async () => {
 
-    console.log(`${props.url}/${props.id}`)
     try {
       const response = await axios.delete(
         `${props.url}/${props.id}`

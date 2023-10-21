@@ -21,7 +21,6 @@ const TablaUsuarios = () =>{
         const getUsuarios = async () =>{
             const respuesta = await axios.get(URL).then((res)=>{
                 setUsuarios(res.data);
-                console.log(res.data)
             }).catch ((response)=>{
                 switch (response.response.status) {
                     case 404:

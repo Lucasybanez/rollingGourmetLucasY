@@ -15,7 +15,6 @@ const Admin = () =>{
         const token = localStorage.getItem("token");
         try{
             const decode = jwt_decode(token);
-            console.log(decode.Rol);
 
             if(decode.Rol != "administrador"){
                 Swal.fire(

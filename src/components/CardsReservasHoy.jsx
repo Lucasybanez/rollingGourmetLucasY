@@ -16,7 +16,6 @@ const CardsReservasHoy = () =>{
         const getReservas = async () =>{
             const respuesta = await axios.get(URL).then((res)=>{
                 setReservas(res.data);
-                console.log(res.data);
             }).catch ((response)=>{
                 switch (response.response.status) {
                     case 404:
@@ -43,8 +42,6 @@ const CardsReservasHoy = () =>{
     // Elimina la reserva
 
     const eliminar = async (id)=>{
-
-        console.log(`${URL}/${id}`)
     
         try {
           const response = await axios.delete(
@@ -64,8 +61,6 @@ const CardsReservasHoy = () =>{
                     {
                         reservas.map((reserv)=>{
 
-                          console.log("fecha", reserv.Fecha)
-                          console.log(fechaHoy, "la de hoy");
                             if(reserv.Fecha==fechaHoy){
                               return(
                                 <>
