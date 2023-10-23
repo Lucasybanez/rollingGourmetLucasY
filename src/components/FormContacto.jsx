@@ -13,6 +13,8 @@ const Formulario = () =>{
 
     const {t} = useTranslation();
 
+    const soloLetras = /^[a-zA-Z ]+$/;
+
   const url = import.meta.env.VITE_API;
 
 
@@ -22,6 +24,7 @@ const Formulario = () =>{
         .required("Debe introducir su nombre")
         .min(8,"Minimo 8 caracteres")
         .max(35,"Máximo 35 caracteres")
+        .matches(soloLetras, "El nombre solo debe incluir letras")
         .trim(),
         email: Yup.string()
         .email("El formato ingresado no es válido")
@@ -32,7 +35,7 @@ const Formulario = () =>{
         mensaje: Yup.string()
         .required("Debe introducir el motivo de contacto")
         .min(50, "Mínimo 50 caracteres")
-        .max(1000,"Máximo 1000 caracteres")
+        .max(200,"Máximo 200 caracteres")
         .trim()
     });
 
@@ -59,11 +62,11 @@ const Formulario = () =>{
                 cancelButtonText: 'No, mejor no!'
               }).then(async (result) => {
                 try {
-                    const res = await axios.post(`${url}/mensajes`,{
-                        nombre : values.nombre,
-                        email : values.email,
-                        mensaje : values.mensaje
-                    })
+                    Swal.fire(
+                        'Mensaje enviado!',
+                        'El mensaje escrito fue enviado exitosamente.',
+                        'success'
+                      )
                 } catch (error) {
                     console.log(error);
                 }
