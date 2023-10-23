@@ -1,16 +1,13 @@
 .page{
   background-image: url("https://live.staticflickr.com/65535/53265730067_cbd588d93d_w.jpg");
   background-size: cover;
-  height: 100vh;
+  padding: 20% 0 10% 0;
 }
 .contenedor{
   width: 60%;
-  margin-inline: auto;
   padding: 2%;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.802);
-  position: relative;
-  top: 19vh;
 }
 .contenedor_foto{
   width: 35%;
