@@ -73,8 +73,25 @@ const FormReserva = () =>{
                     const response = await axios.post(`${url}/ocupadas`, consulta)
                     .then(response => {
                         if(response.data.length <5){
+                          // Obtener la fecha actual del dispositivo
+                          const fechaDispositivo = new Date();
+
+                          // Convertir la fecha ingresada a un objeto Date
+                          const partesFecha = fecha.split('/');
+                          const fechaConsulta = new Date(`${partesFecha[2]}-${partesFecha[1]}-${partesFecha[0]}`);
+
+                          // Verificar si la fecha de la consulta es posterior a la fecha del dispositivo
+                          if (fechaConsulta > fechaDispositivo) {
                             guardar();
+                          } else {
+                            Swal.fire(
+                              "La fecha seleccionada no es válida. Debe ser posterior a la fecha actual.",
+                              " ",
+                              "warning"
+                            );
+                          }
                         } else {
+
                             Swal.fire(
                                 "No hay turnos disponibles en ese horario, elija otro",
                                 " ",
