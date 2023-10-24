@@ -6,8 +6,6 @@
   background-color: white;
 }
 .oscuro {
-  height: 110px;
-  z-index: 100 !important;
   background-color: #191919;
 }
 .oscuro .botones {
@@ -191,10 +189,13 @@ position: relative;
 }
 .navbar-toggler.collapsed {
   background-color: wheat;
+  margin-left: 5%;
+
 }
 
 .navbar-toggler:not(.collapsed){
-  background-color: wheat
+  background-color: wheat;
+  margin-left: 5%;
 }
 
 .modal-cuentaoscuro{
