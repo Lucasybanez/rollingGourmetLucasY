@@ -75,10 +75,13 @@ const FormReserva = () =>{
                         if(response.data.length <5){
                           // Obtener la fecha actual del dispositivo
                           const fechaDispositivo = new Date();
-
+                          fechaDispositivo.setHours(0, 0, 0, 0);
                           // Convertir la fecha ingresada a un objeto Date
                           const partesFecha = fecha.split('/');
                           const fechaConsulta = new Date(`${partesFecha[2]}-${partesFecha[1]}-${partesFecha[0]}`);
+                          fechaConsulta.setDate(fechaConsulta.getDate() + 1);
+                          fechaConsulta.setHours(0, 0, 0, 0);
+
 
                           // Verificar si la fecha de la consulta es posterior a la fecha del dispositivo
                           if (fechaConsulta > fechaDispositivo) {
